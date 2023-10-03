@@ -23,7 +23,7 @@ const CardsMisOrdenes = () => {
                         return <CardMisOrdenes key={order._id} {...order} />
                     })
                 ) : (
-                    <h2>Que esperas para hacer tu primer pedido!!</h2>
+                    <h2>!¿Qué esperas para hacer tu primer pedido?!</h2>
                 )
             }
 

@@ -1,0 +1,30 @@
+.found-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    height: 60vh;
+    gap: 5rem;
+}
+
+.found-text {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: flex-start;
+
+    & h1 {
+        margin: 0;
+    }
+}
+
+.found-title {
+    font-weight: 800;
+    font-size: 2rem;
+}
+
+.found-subtitle {
+    font-weight: 400;
+}

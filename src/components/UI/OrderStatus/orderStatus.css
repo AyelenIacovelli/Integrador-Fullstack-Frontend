@@ -1,0 +1,22 @@
+.status {
+    text-align: center;
+    position: absolute;
+    width: 2rem;
+    height: 1rem;
+    top: 1rem;
+    right: 1rem;
+    border-radius: 1rem;
+    padding: 0.3rem;
+}
+
+.check {
+    background-color: green;
+}
+
+.pending {
+    background-color: yellow;
+}
+
+.cancel {
+    background-color: red;
+}

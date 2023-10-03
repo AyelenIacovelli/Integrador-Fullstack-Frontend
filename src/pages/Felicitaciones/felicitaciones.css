@@ -1,0 +1,95 @@
+.congratulations__section {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    margin-top: -70px;
+    align-items: center;
+}
+
+.thanks__container {
+    display: flex;
+    background-image: url("../../assets/images/panther.jpg");
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 80vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.thanks__container-title {
+    font-size: 50px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: white;
+    text-shadow: 4px 4px 6px rgba(0, 0, 0, 1);
+    padding-top: 40px;
+}
+
+.congratulations__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    gap: 10px;
+    padding: 60px 0;
+}
+
+.congratulations__container ul li {
+    display: flex;
+    justify-content: center;
+    font-size: 16px;
+    line-height: 25px;
+}
+
+
+.congratulations__container-msg {
+    font-size: 20px;
+    color: black;
+}
+
+.congratulations__container-p {
+    font-weight: 600;
+    margin-top: 20px;
+    color: black;
+}
+
+
+/* MEDIAQUERIES */
+
+@media only screen and (max-width:768px) {
+
+    h2 {
+        font-size: 24px;
+    }
+
+    .congratulations__container-msg {
+        font-size: 16px;
+    }
+
+    .congratulations__container-p {
+        font-size: 16px;
+        margin-top: 15px;
+    }
+}
+
+@media only screen and (max-width:576px) {
+
+    .thanks__container-title {
+        font-size: 30px;
+    }
+
+    .congratulations__container-msg {
+        font-size: 14px;
+    }
+
+    .congratulations__container-p {
+        font-size: 14px;
+        margin-top: 11px;
+    }
+
+    .thanks__container {
+        height: 60vh;
+    }
+}

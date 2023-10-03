@@ -1,0 +1,49 @@
+.resumen-container {
+    padding: 2rem 7rem;
+}
+
+.resumen-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mis-ordenes {
+    font-weight: 800;
+    font-size: 1rem;
+    cursor: pointer;
+    background: grey;
+}
+
+.products-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.resumen-container-info {
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.costo-producto {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.envio {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.costo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+}

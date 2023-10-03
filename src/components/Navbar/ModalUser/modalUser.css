@@ -1,0 +1,25 @@
+.modal-container {
+    position: absolute;
+    background-color: var(--gray-bg);
+    box-shadow: 0 0 50px 20px rgba(0, 0, 0, 0.3);
+    width: 450px;
+    top: calc(100px + 2rem);
+    right: 0;
+    z-index: 98;
+    border-radius: 1rem 0 0 1rem;
+    padding: 2rem;
+
+    & span {
+        display: flex;
+        margin-top: 10px;
+        cursor: pointer;
+
+        &:hover {
+            opacity: 90%;
+        }
+    }
+}
+
+.username {
+    font-weight: 400;
+}

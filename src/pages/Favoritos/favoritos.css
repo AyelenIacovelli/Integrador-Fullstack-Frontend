@@ -1,0 +1,34 @@
+.favoritos__section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 50px 20px;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+.favoritos__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+}
+
+.fav__btn {
+    padding: 4px 8px;
+    font-size: 12px;
+    display: flex;
+    gap: 3px;
+}
+
+.fav__btn-icon {
+    color: red;
+}
+
+.favs-p {
+    color: black;
+}

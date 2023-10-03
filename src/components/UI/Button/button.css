@@ -1,0 +1,19 @@
+.button {
+    padding: 0.8rem 1.5rem;
+    outline: none;
+    border: none;
+    background: orange;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.button:hover {
+    opacity: 95%;
+}
+
+.button:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}

@@ -62,7 +62,7 @@ const ProductCard = ({ id, title, img, price, pricesale, category }) => {
                     <span className={`price-original ${isPriceSale ? 'strikethrough' : ''}`}>${price}</span>
                     {isPriceSale && <span className="price-sale">${pricesale}</span>}
                 </span>
-                <Button onClick={() => dispatch(addToCart({ id, title, img, price, pricesale, category }))}><FaPlus className='more_icon' /></Button>
+                <Button onClick={() => dispatch(addToCart({ id, title, img, price, pricesale, category, desc }))}><FaPlus className='more_icon' /></Button>
             </div>
         </div>
     )

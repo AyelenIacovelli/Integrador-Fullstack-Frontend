@@ -12,7 +12,7 @@ import { FaHeart } from "react-icons/fa"
 import { addToCart } from '../../../redux/slices/cartSlice'
 import Button from "../../UI/Button/Button"
 
-const ProductCard = ({ id, title, img, price, pricesale, category }) => {
+const ProductCard = ({ id, title, img, price, pricesale, category, desc }) => {
 
     const navigateToTop = () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });

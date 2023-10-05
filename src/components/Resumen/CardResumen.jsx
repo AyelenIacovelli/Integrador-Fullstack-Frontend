@@ -2,7 +2,10 @@ import { formatPrice } from "../../utils";
 import "./cardResumen.css"
 
 
-const CardResumen = ({ title, desc, quantity, img, price }) => {
+const CardResumen = ({ title, desc, quantity, img, price, pricesale }) => {
+
+    const totalPrice = pricesale ? pricesale * quantity : price * quantity;
+
     return (
         <div className="product">
             <div className="product-left">
@@ -17,7 +20,7 @@ const CardResumen = ({ title, desc, quantity, img, price }) => {
             </div>
             <div className="price-container">
                 <p>3U</p>
-                <span className="product-price">{formatPrice(price * quantity)}</span>
+                <span className="product-price">{formatPrice(totalPrice)}</span>
             </div>
         </div>
     );

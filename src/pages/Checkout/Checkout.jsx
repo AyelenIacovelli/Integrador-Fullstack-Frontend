@@ -11,9 +11,10 @@ const Checkout = () => {
 
     const { cartItems, shippingCost } = useSelector(state => state.cart)
 
-    const price = cartItems.reduce((acc, item) => {
-        return (acc += item.price * item.quantity)
-    }, 0)
+    const totalPrice = cartItems.reduce((acc, item) => {
+        const itemPrice = item.pricesale || item.price;
+        return (acc += itemPrice * item.quantity);
+    }, 0);
 
     return (
         <Helmet title="Checkout">
@@ -22,12 +23,12 @@ const Checkout = () => {
                 <CheckoutForm
                     cartItems={cartItems}
                     shippingCost={shippingCost}
-                    price={price}
+                    price={totalPrice}
                 />
                 <ProductsCheckout
                     cartItems={cartItems}
                     shippingCost={shippingCost}
-                    price={price}
+                    price={totalPrice}
                 />
             </div>
         </Helmet>

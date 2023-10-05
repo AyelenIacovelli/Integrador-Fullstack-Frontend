@@ -1,5 +1,5 @@
 import React from 'react';
-import { formatPrice } from '../../../utils/formatPrice';
+// import { formatPrice } from '../../../utils/formatPrice';
 
 import { BsPlusLg } from 'react-icons/bs';
 import { FaMinus } from 'react-icons/fa';
@@ -13,9 +13,10 @@ import { addToCart, removeFromCart } from '../../../redux/slices/cartSlice';
 
 import "../navbar.css"
 
-const ModalCartCard = ({ img, title, desc, price, quantity, id }) => {
+const ModalCartCard = ({ img, title, desc, price, quantity, id, pricesale }) => {
 
     const dispatch = useDispatch()
+    const isPriceSale = pricesale !== undefined; // Comprueba si 'pricesale' está definido
 
     return (
         <div className='product-container'>
@@ -26,7 +27,10 @@ const ModalCartCard = ({ img, title, desc, price, quantity, id }) => {
             <div className='text-container'>
                 <h3 className='card-title'>{title}</h3>
                 <p className='text'>{desc}</p>
-                <span className='price'>{formatPrice(price)}</span>
+                <span className="price">
+                    <span className={`price-original ${isPriceSale ? 'strikethrough' : ''}`}>${price}</span>
+                    {isPriceSale && <span className="price-sale">${pricesale}</span>}
+                </span>
             </div>
             <div className='quantity-container'>
                 <Increase
@@ -37,7 +41,7 @@ const ModalCartCard = ({ img, title, desc, price, quantity, id }) => {
 
                 </Increase>
                 <Count>{quantity}</Count>
-                <Increase onClick={() => dispatch(addToCart({ img, title, desc, price, quantity, id }))}>
+                <Increase onClick={() => dispatch(addToCart({ img, title, desc, price, quantity, id, pricesale }))}>
                     <BsPlusLg />
                 </Increase>
             </div>

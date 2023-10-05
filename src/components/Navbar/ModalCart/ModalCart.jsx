@@ -22,8 +22,9 @@ const ModalCart = () => {
 
 
     const totalPrice = cartItems.reduce((acc, item) => {
-        return (acc += item.price * item.quantity)
-    }, 0)
+        const itemPrice = item.pricesale || item.price;
+        return (acc += itemPrice * item.quantity);
+    }, 0);
 
     return (
         <>

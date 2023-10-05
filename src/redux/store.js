@@ -8,6 +8,8 @@ import userReducer from "./slices/userSlice"
 import ordersReducer from "./slices/ordersSlice"
 import productsReducer from "./slices/productsSlice"
 import categoriesReducer from "./slices/categoriesSlice"
+import recommendedReducer from "./slices/recommendedSlice"
+import ofertasReducer from "./slices/ofertasSlice"
 
 const reducers = combineReducers({
     cart: cartSlice,
@@ -16,6 +18,8 @@ const reducers = combineReducers({
     orders: ordersReducer,
     products: productsReducer,
     categories: categoriesReducer,
+    recommended: recommendedReducer,
+    ofertas: ofertasReducer,
 })
 
 const persistConfig = {

@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Link, useNavigate } from "react-router-dom";
 
 import { FaUserAlt } from "react-icons/fa";
-import { HiHome } from "react-icons/hi";
+// import { HiHome } from "react-icons/hi";
 
 import CartIcon from "./CartIcon/CartIcon";
 import ModalCart from "./ModalCart/ModalCart";
@@ -13,7 +13,7 @@ import { toggleHiddenMenu } from "../../redux/slices/userSlice";
 
 import logo2 from "../../assets/images/logogg.png"
 
-
+import { FaHeart } from "react-icons/fa"
 
 
 function Navbar() {
@@ -21,6 +21,9 @@ function Navbar() {
     const dispatch = useDispatch();
 
     const { currentUser } = useSelector((state) => state.user);
+
+    const favorites = useSelector((state) => state.favs.favorites);
+    const favoriteProductsCount = favorites ? favorites.length : 0;
 
 
 
@@ -39,10 +42,26 @@ function Navbar() {
             <div className="links-container">
                 <motion.div whileTap={{ scale: 0.97 }}>
                     <Link to="/">
-                        <div>
+                        {/* <div>
                             <HiHome />
-                        </div>
+                        </div> */}
                         Home
+                    </Link>
+                </motion.div>
+                <motion.div whileTap={{ scale: 0.97 }}>
+                    <Link to="/tienda">
+                        {/* <div>
+                            <FaShoppingCart />
+                        </div> */}
+                        Tienda
+                    </Link>
+                </motion.div>
+                <motion.div whileTap={{ scale: 0.97 }}>
+                    <Link to="/favoritos">
+                        <div>
+                            <FaHeart />
+                            <span className='badge'>{favoriteProductsCount}</span>
+                        </div>
                     </Link>
                 </motion.div>
 

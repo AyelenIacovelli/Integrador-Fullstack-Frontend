@@ -9,7 +9,7 @@ import Login from "../pages/Login/Login"
 import Signup from "../pages/Signup/Signup"
 import Tienda from "../pages/Tienda/Tienda"
 import Felicitaciones from "../pages/Felicitaciones/Felicitaciones"
-// import Favoritos from '../pages/Favoritos/Favoritos'
+import Favoritos from '../pages/Favoritos/Favoritos'
 import MisOrdenes from "../pages/MisOrdenes/MisOrdenes"
 import ProtectedRoute from "./ProtectedRoute"
 import Resumen from '../pages/Resumen/Resumen'
@@ -26,7 +26,7 @@ const Routers = () => {
             <Route path='tienda' element={<Tienda />} />
             <Route path='tienda/:id' element={<ProductDetails />} />
 
-            {/* <Route path='favoritos' element={<Favoritos />} /> */}
+            <Route path='favoritos' element={<Favoritos />} />
             <Route path='login' element={<Login />} />
             <Route path='signup' element={<Signup />} />
 

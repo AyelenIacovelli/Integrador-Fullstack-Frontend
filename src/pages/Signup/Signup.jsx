@@ -10,7 +10,7 @@ import CommonSection from '../../components/UI/common/CommonSection';
 import Helmet from '../../components/Helmet/Helmet';
 
 import { createUser } from "../../axios/axios-user";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { setCurrentUser } from "../../redux/slices/userSlice";
 import useRedirect from "../../custom-hooks/useRedirect";
 
@@ -18,7 +18,8 @@ import "../Signup/signup.css"
 
 const Signup = () => {
     const dispatch = useDispatch();
-    useRedirect("/")
+    const currentUser = useSelector(state => state.user.cur)
+    useRedirect("/validate")
 
     const validationSchema = Yup.object().shape({
         username: Yup.string().required('El nombre de usuario es requerido'),

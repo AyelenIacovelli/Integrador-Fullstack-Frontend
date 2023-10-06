@@ -6,6 +6,7 @@ import { verifyUser } from "../../axios/axios-user"
 import { setVerified } from '../../redux/slices/userSlice'
 import Submit from "../../components/UI/Submit/Submit"
 import LoginInput from '../../components/UI/LoginInput/LoginInput'
+import Button from '../../components/UI/Button/Button'
 
 
 const Validate = () => {
@@ -23,25 +24,38 @@ const Validate = () => {
     //     }
     // }, [currentUser, navigate])
     return (
-        <div className='validate-container'>
-            <h1>Valida tu cuenta</h1>
-            <Formik
-                initialValues={{
-                    code: ''
-                }}
-                onSubmit={async values => {
-                    await verifyUser(currentUser.email, values.code)
-                    dispatch(setVerified())
-                    navigate('/')
-                }}
-            >
-                <Form>
-                    <LoginInput name='code' type='code' placeholder='Ingrese su código' />
-                    <Submit>Validar</Submit>
-                </Form>
+        <>
+            {
+                currentUser?.verified ?
+                    (<>
+                        <h1>¡Tu cuenta ya fue verificada!</h1>
+                        <Button onClick={() => {
+                            navigate('/')
+                        }}>Volver al Home</Button>
+                    </>)
+                    :
+                    (<div className='validate-container'>
+                        <h1>Valida tu cuenta</h1>
+                        <Formik
+                            initialValues={{
+                                code: ''
+                            }}
+                            onSubmit={async values => {
+                                await verifyUser(currentUser.email, values.code)
+                                dispatch(setVerified())
+                                navigate('/')
+                            }}
+                        >
+                            <Form>
+                                <LoginInput name='code' type='code' placeholder='Ingrese su código' />
+                                <Submit>Validar</Submit>
+                            </Form>
 
-            </Formik>
-        </div>
+                        </Formik>
+                    </div>)
+            }
+        </>
+
     )
 }
 

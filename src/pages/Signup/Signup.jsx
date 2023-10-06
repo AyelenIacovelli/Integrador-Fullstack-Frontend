@@ -3,7 +3,7 @@ import { Formik, Form } from 'formik';
 import LoginInput from "../../components/UI/LoginInput/LoginInput";
 import Submit from "../../components/UI/Submit/Submit";
 
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 // import { toast } from 'react-toastify';
 import * as Yup from 'yup';
 import CommonSection from '../../components/UI/common/CommonSection';
@@ -18,7 +18,7 @@ import "../Signup/signup.css"
 
 const Signup = () => {
     const dispatch = useDispatch();
-    const navigate = useNavigate()
+    // const navigate = useNavigate()
     // const currentUser = useSelector(state => state.user.currentUser)
     useRedirect("/validation")
 

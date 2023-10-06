@@ -12,13 +12,6 @@ import * as Yup from 'yup';
 const validationSchema = Yup.object().shape({
     code: Yup.string()
         .required('Este campo es requerido')
-        .test('codigo-valido', 'El código ingresado no es válido', async function (value) {
-            // Aquí comparamos el valor ingresado con el código almacenado en el usuario
-            const currentUser = useSelector(state => state.user.currentUser); // Obtenemos el usuario desde el estado o de donde lo tengas
-            const codigoBackend = currentUser ? currentUser.code : ''; // Obtenemos el código del usuario
-
-            return value === codigoBackend;
-        }),
 });
 
 const Validate = () => {

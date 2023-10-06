@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { useNavigate } from "react-router-dom"
 import { useDispatch, useSelector } from "react-redux"
 import { Formik, Form } from "formik"
@@ -12,15 +12,15 @@ const Validate = () => {
     const dispatch = useDispatch()
     const currentUser = useSelector(state => state.user.currentUser)
 
-    useEffect(() => {
-        if (!currentUser) {
-            navigate('/login')
-        } else if (currentUser.verified) {
-            navigate('/')
-        } else if (!currentUser.verified) {
-            navigate('/validation')
-        }
-    }, [currentUser, navigate])
+    // useEffect(() => {
+    //     if (!currentUser) {
+    //         navigate('/login')
+    //     } else if (currentUser.verified) {
+    //         navigate('/')
+    //     } else if (!currentUser.verified) {
+    //         navigate('/validation')
+    //     }
+    // }, [currentUser, navigate])
     return (
         <div className='validate-container'>
             <h1>Valida tu cuenta</h1>

@@ -1,24 +1,28 @@
 import React from 'react'
 import Helmet from "../../components/Helmet/Helmet"
 import { Form, Formik } from "formik"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import "../Signup/signup.css"
 // import { toast } from "react-toastify"
 // import "react-toastify/dist/ReactToastify.css";
 import CommonSection from '../../components/UI/common/CommonSection'
 import { loginUser } from '../../axios/axios-user'
-import { useDispatch } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import { setCurrentUser } from '../../redux/slices/userSlice'
 import LoginInput from '../../components/UI/LoginInput/LoginInput'
-import useRedirect from '../../custom-hooks/useRedirect'
+// import useRedirect from '../../custom-hooks/useRedirect'
 import Submit from '../../components/UI/Submit/Submit'
+
 
 const Login = () => {
     // const [loading, setLoading] = useState(false);
     // const navigate = useNavigate();
     const dispatch = useDispatch()
 
-    useRedirect("/")
+
+
+    const { currentUser } = useSelector(state => state.user.current)
+    useRedirect(currentUser?.verified ? "/" : "/validation")
 
     // const signIn = async (values) => {
     //     setLoading(true);

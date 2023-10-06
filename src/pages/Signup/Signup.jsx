@@ -19,7 +19,7 @@ import "../Signup/signup.css"
 const Signup = () => {
     const dispatch = useDispatch();
     const currentUser = useSelector(state => state.user.cur)
-    useRedirect("/validate")
+    useRedirect("/validation")
 
     const validationSchema = Yup.object().shape({
         username: Yup.string().required('El nombre de usuario es requerido'),

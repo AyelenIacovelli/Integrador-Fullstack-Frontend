@@ -12,7 +12,7 @@ const Validation = () => {
         <div className='validation-container'>
 
             <>
-                <h1>!BIENVENIDO! Te llegará un mail con un código de verificación</h1>
+                <h1>!BIENVENIDO/A! Te llegará un mail con un código de verificación</h1>
                 <Button onClick={() => {
                     navigate('/validate')
                 }}>Validar tu cuenta</Button>

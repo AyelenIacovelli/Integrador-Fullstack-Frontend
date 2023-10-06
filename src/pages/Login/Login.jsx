@@ -22,7 +22,7 @@ const Login = () => {
 
 
     const { currentUser } = useSelector(state => state.user.current)
-    // useRedirect(currentUser?.verified ? "/" : "/validation")
+    useRedirect(currentUser?.verified ? "/" : "/validation")
 
     // const signIn = async (values) => {
     //     setLoading(true);
@@ -72,7 +72,7 @@ const Login = () => {
                             <LoginInput name='password' type="password" placeholder="Password" />
                             <Link to="/forgot-password"></Link>
 
-                            <Submit onClick={() => (currentUser?.verified ? "/" : "/validation")}>
+                            <Submit>
                                 Ingresar
                             </Submit>
 

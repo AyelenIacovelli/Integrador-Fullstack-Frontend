@@ -1,7 +1,7 @@
 import React from 'react'
 import { useNavigate } from "react-router-dom"
 import { useDispatch, useSelector } from "react-redux"
-import { Formik, Form, ErrorMessage } from "formik"
+import { Formik, Form } from "formik"
 import { verifyUser } from "../../axios/axios-user"
 import { setVerified } from '../../redux/slices/userSlice'
 import Submit from "../../components/UI/Submit/Submit"
@@ -14,8 +14,8 @@ const validationSchema = Yup.object().shape({
         .required('Este campo es requerido')
         .test('codigo-valido', 'El código ingresado no es válido', async function (value) {
             // Aquí comparamos el valor ingresado con el código almacenado en el usuario
-            const usuario = useSelector(state => state.user.currentUser); // Obtenemos el usuario desde el estado o de donde lo tengas
-            const codigoBackend = usuario ? usuario.code : ''; // Obtenemos el código del usuario
+            const currentUser = useSelector(state => state.user.currentUser); // Obtenemos el usuario desde el estado o de donde lo tengas
+            const codigoBackend = currentUser ? currentUser.code : ''; // Obtenemos el código del usuario
 
             return value === codigoBackend;
         }),
@@ -65,7 +65,6 @@ const Validate = () => {
                         >
                             <Form>
                                 <LoginInput name='code' type='code' placeholder='Ingrese su código' />
-                                <ErrorMessage name='code' component='div' className='error-message' />
                                 <Submit>Validar</Submit>
                             </Form>
 

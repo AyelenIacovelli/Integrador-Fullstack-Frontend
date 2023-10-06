@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useNavigate } from "react-router-dom"
 import { useDispatch, useSelector } from "react-redux"
 import { Formik, Form } from "formik"
@@ -18,6 +18,7 @@ const Validate = () => {
     const navigate = useNavigate()
     const dispatch = useDispatch()
     const currentUser = useSelector(state => state.user.currentUser)
+    const [error, setError] = useState(null);
 
     // useEffect(() => {
     //     if (!currentUser) {
@@ -27,10 +28,7 @@ const Validate = () => {
     //     } else if (!currentUser.verified) {
     //         navigate('/validation')
     //     }
-    // }, [currentUser, navigate])
-
-
-
+    // }, [currentUser, navigate]
 
     return (
         <>
@@ -51,9 +49,23 @@ const Validate = () => {
                             }}
                             validationSchema={validationSchema}
                             onSubmit={async values => {
-                                await verifyUser(currentUser.email, values.code)
-                                dispatch(setVerified())
-                                navigate('/')
+                                try {
+                                    // Verifica el código en la base de datos
+                                    const isCodeValid = await verifyUser(currentUser.email, values.code);
+
+                                    if (isCodeValid) {
+                                        // Si el código es válido, actualiza el estado y navega a la página principal
+                                        dispatch(setVerified());
+                                        navigate('/');
+                                    } else {
+                                        // Si el código no es válido, muestra un mensaje de error
+                                        setError('El código ingresado no es válido');
+                                    }
+                                } catch (error) {
+                                    // Manejo de errores de la solicitud a la base de datos
+                                    console.error('Error al verificar el código:', error);
+                                    setError('Error al verificar el código. Intente nuevamente más tarde.');
+                                }
                             }}
                         >
                             <Form>

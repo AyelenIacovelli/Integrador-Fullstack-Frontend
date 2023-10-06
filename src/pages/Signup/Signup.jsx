@@ -3,23 +3,24 @@ import { Formik, Form } from 'formik';
 import LoginInput from "../../components/UI/LoginInput/LoginInput";
 import Submit from "../../components/UI/Submit/Submit";
 
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 // import { toast } from 'react-toastify';
 import * as Yup from 'yup';
 import CommonSection from '../../components/UI/common/CommonSection';
 import Helmet from '../../components/Helmet/Helmet';
 
 import { createUser } from "../../axios/axios-user";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { setCurrentUser } from "../../redux/slices/userSlice";
-import useRedirect from "../../custom-hooks/useRedirect";
+// import useRedirect from "../../custom-hooks/useRedirect";
 
 import "../Signup/signup.css"
 
 const Signup = () => {
     const dispatch = useDispatch();
-    const currentUser = useSelector(state => state.user.cur)
-    useRedirect("/validation")
+    const navigate = useNavigate()
+    // const currentUser = useSelector(state => state.user.currentUser)
+    // useRedirect("/validation")
 
     const validationSchema = Yup.object().shape({
         username: Yup.string().required('El nombre de usuario es requerido'),
@@ -59,7 +60,7 @@ const Signup = () => {
 
 
 
-                            <Submit type="button" className="auth__btn">
+                            <Submit type="button" className="auth__btn" onClick={() => navigate("/validation")}>
                                 Crear una cuenta
                             </Submit>
                             <p>

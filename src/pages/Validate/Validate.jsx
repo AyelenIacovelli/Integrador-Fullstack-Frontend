@@ -60,6 +60,7 @@ const Validate = () => {
                                     } else {
                                         // Si el código no es válido, muestra un mensaje de error
                                         setError('El código ingresado no es válido');
+                                        console.log(error);
                                     }
                                 } catch (error) {
                                     // Manejo de errores de la solicitud a la base de datos

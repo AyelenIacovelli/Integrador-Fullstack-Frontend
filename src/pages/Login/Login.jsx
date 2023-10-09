@@ -3,8 +3,8 @@ import Helmet from "../../components/Helmet/Helmet"
 import { Form, Formik } from "formik"
 import { Link } from "react-router-dom"
 import "../Signup/signup.css"
-// import { toast } from "react-toastify"
-// import "react-toastify/dist/ReactToastify.css";
+import { toast } from "react-toastify"
+import "react-toastify/dist/ReactToastify.css";
 import CommonSection from '../../components/UI/common/CommonSection'
 import { loginUser } from '../../axios/axios-user'
 import { useDispatch, useSelector } from "react-redux"
@@ -58,12 +58,20 @@ const Login = () => {
                             password: '',
                         }}
                         onSubmit={async (values) => {
-                            const user = await loginUser(values.email, values.password);
-                            if (user) {
-                                dispatch(setCurrentUser({
-                                    ...user.usuario,
-                                    token: user.token
-                                }))
+                            try {
+                                const user = await loginUser(values.email, values.password);
+                                if (user) {
+                                    dispatch(setCurrentUser({
+                                        ...user.usuario,
+                                        token: user.token
+                                    }));
+                                    toast.success('Sesión iniciada');
+                                    // Redirige a la página de inicio o a donde sea necesario
+                                } else {
+                                    toast.error('Error al iniciar sesión. Verifica tus credenciales.');
+                                }
+                            } catch (error) {
+                                toast.error('Error al iniciar sesión. Verifica tus credenciales.');
                             }
                         }}
                     >

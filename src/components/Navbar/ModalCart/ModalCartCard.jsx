@@ -18,6 +18,18 @@ const ModalCartCard = ({ img, title, desc, price, quantity, id, pricesale }) => 
     const dispatch = useDispatch()
     const isPriceSale = pricesale !== undefined; // Comprueba si 'pricesale' está definido
 
+    const handleRemoveItem = () => {
+        if (quantity === 1) {
+            const confirmed = window.confirm('¿Estás seguro que deseas eliminar este producto del carrito?');
+            if (confirmed) {
+                dispatch(removeFromCart(id));
+            }
+        } else {
+            dispatch(removeFromCart(id));
+        }
+    };
+
+
     return (
         <div className='product-container'>
             <img
@@ -35,7 +47,7 @@ const ModalCartCard = ({ img, title, desc, price, quantity, id, pricesale }) => 
             <div className='quantity-container'>
                 <Increase
                     bgColor='var(--btn-gradient-secondary)'
-                    onClick={() => dispatch(removeFromCart(id))}
+                    onClick={handleRemoveItem}
                 >
                     {quantity === 1 ? <IoMdTrash /> : <FaMinus />}
 

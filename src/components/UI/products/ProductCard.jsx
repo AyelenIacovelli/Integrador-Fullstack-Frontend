@@ -5,7 +5,7 @@ import { FaPlus } from "react-icons/fa"
 import { AiTwotoneFire } from "react-icons/ai"
 import "../../../data/Products"
 import { Link } from 'react-router-dom'
-// import { toast } from "react-toastify"
+import { toast } from "react-toastify"
 import { useDispatch, useSelector } from "react-redux"
 import { toggleFavorite } from '../../../redux/slices/favsSlice'
 import { FaHeart } from "react-icons/fa"
@@ -23,23 +23,22 @@ const ProductCard = ({ id, title, img, price, pricesale, category, desc }) => {
     const favorites = useSelector((state) => state.favs.favorites);
     const isFavorite = favorites.includes(id);
 
-    // const addToCart = () => {
-    //     dispatch(addToCart({
-    //         id: item.id,
-    //         title: item.title,
-    //         price: item.hasOwnProperty("pricesale") ? item.pricesale : item.price,
-    //         img: item.img,
-    //     }))
-
-    //     toast.success("Producto agregado correctamente al carrito")
-    // }
-
     const isPriceSale = pricesale !== undefined; // Comprueba si 'pricesale' está definido
 
     const showOfferFire = isPriceSale ? 'show' : '';
 
     const handleIconClick = () => {
-        dispatch(toggleFavorite(id)); // Invierte el estado individual al hacer clic
+        dispatch(toggleFavorite(id)); // Invierte el estado de favoritos individual al hacer clic
+        if (!isFavorite) {
+            toast.success('El producto se agregó correctamente a favoritos');
+        } else {
+            toast.success('El producto se quitó correctamente de favoritos');
+        }
+    }
+
+    const handleAddToCart = () => {
+        dispatch(addToCart({ id, title, img, price, pricesale, category, desc }));
+        toast.success('Se agregó correctamente el producto al carrito');
     }
 
     return (
@@ -62,7 +61,7 @@ const ProductCard = ({ id, title, img, price, pricesale, category, desc }) => {
                     <span className={`price-original ${isPriceSale ? 'strikethrough' : ''}`}>${price}</span>
                     {isPriceSale && <span className="price-sale">${pricesale}</span>}
                 </span>
-                <Button onClick={() => dispatch(addToCart({ id, title, img, price, pricesale, category, desc }))}><FaPlus className='more_icon' /></Button>
+                <Button onClick={handleAddToCart}><FaPlus className='more_icon' /></Button>
             </div>
         </div>
     )

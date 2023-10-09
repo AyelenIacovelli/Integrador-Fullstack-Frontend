@@ -26,6 +26,13 @@ const ModalCart = () => {
         return (acc += itemPrice * item.quantity);
     }, 0);
 
+    const handleClearCart = () => {
+        const confirmed = window.confirm('¿Estás seguro que deseas eliminar todo el carrito?');
+        if (confirmed) {
+            dispatch(clearCart());
+        }
+    };
+
     return (
         <>
             {!hiddenCart && (
@@ -57,7 +64,7 @@ const ModalCart = () => {
                             <div className='title'>
                                 <h1>Tus Productos</h1>
                                 <Increase
-                                    onClick={() => dispatch(clearCart())}
+                                    onClick={handleClearCart}
                                     bgColor='var(--magenta)'
                                     disabled={!cartItems.length}
                                 >
@@ -72,7 +79,7 @@ const ModalCart = () => {
                                             return <ModalCartCard {...item} key={item.id} />
                                         })
                                     ) : (
-                                        <p>No seas amarrete, comprá algo.</p>
+                                        <p>Tu carrito está vacío</p>
                                     )
                                 }
                             </div>

@@ -9,6 +9,8 @@ import { setCurrentUser, toggleHiddenMenu } from '../../../redux/slices/userSlic
 import { toast } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css";
 
+import useRedirect from '../../../custom-hooks/useRedirect';
+
 const ModalUser = () => {
     const { currentUser, hiddenMenu } = useSelector(state => state.user)
 
@@ -19,6 +21,8 @@ const ModalUser = () => {
         dispatch(toggleHiddenMenu());
         toast.success('Sesión cerrada');
     };
+
+    useRedirect("/")
 
     return (
         <AnimatePresence>

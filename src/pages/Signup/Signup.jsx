@@ -4,7 +4,8 @@ import LoginInput from "../../components/UI/LoginInput/LoginInput";
 import Submit from "../../components/UI/Submit/Submit";
 
 import { Link } from 'react-router-dom';
-// import { toast } from 'react-toastify';
+import { toast } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
 import * as Yup from 'yup';
 import CommonSection from '../../components/UI/common/CommonSection';
 import Helmet from '../../components/Helmet/Helmet';
@@ -44,12 +45,17 @@ const Signup = () => {
                         }}
                         validationSchema={validationSchema}
                         onSubmit={async (values, actions) => {
-                            const user = await createUser(values.username, values.email, values.password);
-                            actions.resetForm();
-                            if (user) {
-                                dispatch(setCurrentUser({
-                                    ...user.usuario
-                                }))
+                            try {
+                                const user = await createUser(values.username, values.email, values.password);
+                                actions.resetForm();
+                                if (user) {
+                                    dispatch(setCurrentUser({
+                                        ...user.usuario,
+                                    }));
+                                    toast.success('Usuario registrado');
+                                }
+                            } catch (error) {
+                                toast.error(error.message);
                             }
                         }}
                     >

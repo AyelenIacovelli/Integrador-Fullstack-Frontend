@@ -7,6 +7,7 @@ import Button from '../UI/Button/Button';
 import "./cardsRecomendacion.css"
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../../redux/slices/cartSlice';
+import { Link } from 'react-router-dom'
 
 import { toast } from 'react-toastify'
 
@@ -23,19 +24,22 @@ const CardRecomendacion = ({ title, img, price, desc, id, pricesale }) => {
 
     return (
         <div className='card'>
-            <img
-                src={img}
-                alt={title}
-                className='card-img'
-            />
-            <div className='card-text'>
-                <h2 className='card-title'>{title}</h2>
-                <p className='info-price'>{desc}</p>
-                <span className="price">
-                    <span className={`price-original ${isPriceSale ? 'strikethrough' : ''}`}>${price}</span>
-                    {isPriceSale && <span className="price-sale">${pricesale}</span>}
-                </span>
-            </div>
+            <Link to={`/tienda/${id}`}>
+                <img
+                    src={img}
+                    alt={title}
+                    className='card-img'
+                />
+
+                <div className='card-text'>
+                    <h2 className='card-title'>{title}</h2>
+                    <p className='info-price'>{desc}</p>
+                    <span className="price">
+                        <span className={`price-original ${isPriceSale ? 'strikethrough' : ''}`}>${price}</span>
+                        {isPriceSale && <span className="price-sale">${pricesale}</span>}
+                    </span>
+                </div>
+            </Link>
             <Button onClick={handleAddToCart}>Agregar</Button>
         </div>
     );

@@ -10,7 +10,7 @@ import { loginUser } from '../../axios/axios-user'
 import { useDispatch, useSelector } from "react-redux"
 import { setCurrentUser } from '../../redux/slices/userSlice'
 import LoginInput from '../../components/UI/LoginInput/LoginInput'
-import useRedirect from '../../custom-hooks/useRedirect'
+// import useRedirect from '../../custom-hooks/useRedirect'
 import Submit from '../../components/UI/Submit/Submit'
 
 
@@ -22,28 +22,7 @@ const Login = () => {
 
 
     const currentUser = useSelector(state => state.user.current)
-    useRedirect(currentUser?.verified ? "/" : "/validation")
-
-    // const signIn = async (values) => {
-    //     setLoading(true);
-    //     try {
-    //         const userCredential = await loginUser(values.email, values.password);
-    //         const user = userCredential.user;
-    //         if (user) {
-    //             dispatch(setCurrentUser({
-    //                 ...user.usuario,
-    //                 token: user.token
-    //             }))
-    //         }
-    //         console.log(user);
-    //         setLoading(false);
-    //         toast.success('Sesión iniciada');
-    //         navigate("/home");
-    //     } catch (error) {
-    //         setLoading(false);
-    //         toast.error("Debe completar los campos");
-    //     }
-    // };
+    // useRedirect(currentUser?.verified ? "/" : "/validation")
 
     return (
         <Helmet title="Login">
@@ -66,7 +45,11 @@ const Login = () => {
                                         token: user.token
                                     }));
                                     toast.success('Sesión iniciada');
-                                    // Redirige a la página de inicio o a donde sea necesario
+                                    if (user.usuario.verified) {
+                                        navigate("/");
+                                    } else {
+                                        navigate("/validation");
+                                    }
                                 } else {
                                     toast.error('Error al iniciar sesión. Verifica tus credenciales.');
                                 }

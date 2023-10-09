@@ -1,7 +1,7 @@
 import React from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import "./modalUser.css"
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { setCurrentUser, toggleHiddenMenu } from '../../../redux/slices/userSlice';
@@ -9,20 +9,19 @@ import { setCurrentUser, toggleHiddenMenu } from '../../../redux/slices/userSlic
 import { toast } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css";
 
-import useRedirect from '../../../custom-hooks/useRedirect';
-
 const ModalUser = () => {
     const { currentUser, hiddenMenu } = useSelector(state => state.user)
 
     const dispatch = useDispatch();
+    const navigate = useNavigate()
 
     const handleLogout = () => {
         dispatch(setCurrentUser(null));
         dispatch(toggleHiddenMenu());
         toast.success('Sesión cerrada');
+        navigate("/")
     };
 
-    useRedirect("/")
 
     return (
         <AnimatePresence>

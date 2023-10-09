@@ -255,6 +255,10 @@ header {
     gap: 2px;
 }
 
+.check-grey {
+    color: gray;
+}
+
 .span:hover {
 
     text-decoration: underline;

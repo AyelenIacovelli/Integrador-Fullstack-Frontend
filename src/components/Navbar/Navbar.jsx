@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Link, useNavigate } from "react-router-dom";
 
-import { FaUserAlt } from "react-icons/fa";
+import { FaUserAlt, FaHeart, FaCheckCircle } from "react-icons/fa";
 // import { HiHome } from "react-icons/hi";
 
 import CartIcon from "./CartIcon/CartIcon";
@@ -13,7 +13,6 @@ import { toggleHiddenMenu } from "../../redux/slices/userSlice";
 
 import logo2 from "../../assets/images/logogg.png"
 
-import { FaHeart } from "react-icons/fa"
 import { useEffect, useRef } from "react";
 
 
@@ -106,7 +105,7 @@ function Navbar() {
                                         "Iniciar Sesión"
                                 }
                             </span>
-                            {currentUser ? null : <FaUserAlt />}
+                            {currentUser ? <FaCheckCircle className="check-grey" /> : <FaUserAlt />}
                         </div>
                     </div>
                 </div>

@@ -1,7 +1,7 @@
 import React from 'react'
 import Helmet from "../../components/Helmet/Helmet"
 import { Form, Formik } from "formik"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import "../Signup/signup.css"
 import { toast } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css";
@@ -18,6 +18,7 @@ const Login = () => {
     // const [loading, setLoading] = useState(false);
     // const navigate = useNavigate();
     const dispatch = useDispatch()
+    const navigate = useNavigate()
 
 
 
@@ -45,7 +46,7 @@ const Login = () => {
                                         token: user.token
                                     }));
                                     toast.success('Sesión iniciada');
-                                    if (user.usuario.verified) {
+                                    if (currentUser.verified) {
                                         navigate("/");
                                     } else {
                                         navigate("/validation");

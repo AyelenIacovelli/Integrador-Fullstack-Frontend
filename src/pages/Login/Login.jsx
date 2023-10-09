@@ -46,7 +46,7 @@ const Login = () => {
                                         token: user.token
                                     }));
                                     toast.success('Sesión iniciada');
-                                    if (currentUser.verified) {
+                                    if (user.usuario.verified) {
                                         navigate("/");
                                     } else {
                                         navigate("/validation");

@@ -101,11 +101,14 @@ function Navbar() {
                             <span className="span">
                                 {
                                     currentUser ?
-                                        `${currentUser.nombre}` :
+                                        <>
+                                            {currentUser.isVerified ? <FaCheckCircle /> : null}
+                                            {currentUser.nombre}
+                                        </> :
                                         "Iniciar Sesión"
                                 }
                             </span>
-                            {currentUser ? <FaCheckCircle className="check-grey" /> : <FaUserAlt />}
+                            {currentUser ? null : <FaUserAlt />}
                         </div>
                     </div>
                 </div>

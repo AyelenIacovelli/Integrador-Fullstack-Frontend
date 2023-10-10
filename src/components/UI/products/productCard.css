@@ -15,6 +15,10 @@
     align-items: center;
 }
 
+.product__img {
+    position: relative;
+}
+
 .product__img img {
     width: 300px;
     height: 300px;
@@ -69,6 +73,7 @@
 .offer-fire {
     display: flex;
     color: rgb(160, 59, 1);
+    z-index: 2;
 }
 
 .offer-fire.show svg {

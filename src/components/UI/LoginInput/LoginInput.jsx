@@ -8,7 +8,7 @@ const LoginInput = ({ type, placeholder, name }) => {
 
             {
                 ({ field, form: { errors, touched } }) => (
-                    <div className="input-container">
+                    <div className="form__group">
 
                         <input
                             className={`login-input ${errors[field.name] && touched[field.name] ? 'is-error' : ''}`}

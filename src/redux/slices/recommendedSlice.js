@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import { pickRandomProducts } from '../../utils/pickRandomProducts';
 
 const INITIAL_STATE = {
-    recommended: pickRandomProducts(4),
+    recommended: pickRandomProducts(6),
 };
 
 export const recommendedSlice = createSlice({

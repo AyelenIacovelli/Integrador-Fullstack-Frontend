@@ -62,14 +62,8 @@ const ModalCart = () => {
 
                         <div className='main-container'>
                             <div className='title'>
-                                <h1>Tus Productos</h1>
-                                <Increase
-                                    onClick={handleClearCart}
-                                    bgColor='var(--magenta)'
-                                    disabled={!cartItems.length}
-                                >
-                                    <IoMdTrash />
-                                </Increase>
+                                <h1>Mis Productos</h1>
+
                             </div>
 
                             <div className='products-wrapper'>
@@ -83,8 +77,17 @@ const ModalCart = () => {
                                     )
                                 }
                             </div>
-                        </div>
 
+                        </div>
+                        <div className='trash-btn-container'>
+                            <Increase
+                                onClick={handleClearCart}
+                                bgColor='var(--magenta)'
+                                disabled={!cartItems.length}
+                            >
+                                <span className='span-trash'>Borrar todos los productos del carrito <IoMdTrash /></span>
+                            </Increase>
+                        </div>
                         <div className='price-container'>
                             <div className='subtotal'>
                                 <p>Subtotal:</p>

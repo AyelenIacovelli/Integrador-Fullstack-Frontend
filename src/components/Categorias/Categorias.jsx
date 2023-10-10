@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux";
 // import { Categories } from "../../data/Categories";
 import Categoria from "./Categoria";
+import "./categorias.css"
 
 
 const Categorias = () => {

@@ -3,7 +3,7 @@ import { products } from "../../data/Products"
 import { pickRandomBuzosProducts } from '../../utils/pickRandomBuzosProducts';
 
 const INITIAL_STATE = {
-    ofertas: pickRandomBuzosProducts(4, products),
+    ofertas: pickRandomBuzosProducts(6, products),
 };
 
 export const ofertasSlice = createSlice({

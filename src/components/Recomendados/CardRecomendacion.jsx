@@ -11,6 +11,8 @@ import { Link } from 'react-router-dom'
 
 import { toast } from 'react-toastify'
 
+import { AiTwotoneFire } from "react-icons/ai"
+
 const CardRecomendacion = ({ title, img, price, desc, id, pricesale }) => {
 
     const dispatch = useDispatch();
@@ -22,14 +24,19 @@ const CardRecomendacion = ({ title, img, price, desc, id, pricesale }) => {
         toast.success('Se agregó correctamente el producto al carrito');
     }
 
+    const showOfferFire = isPriceSale ? 'show' : '';
+
     return (
         <div className='card'>
             <Link to={`/tienda/${id}`}>
-                <img
-                    src={img}
-                    alt={title}
-                    className='card-img'
-                />
+                <div className='card-img-container'>
+                    {isPriceSale && <span className={`offer-fire ${showOfferFire}`}><AiTwotoneFire /></span>}
+                    <img
+                        src={img}
+                        alt={title}
+                        className='card-img'
+                    />
+                </div>
 
                 <div className='card-text'>
                     <h2 className='card-title'>{title}</h2>
@@ -40,7 +47,7 @@ const CardRecomendacion = ({ title, img, price, desc, id, pricesale }) => {
                     </span>
                 </div>
             </Link>
-            <Button onClick={handleAddToCart}>Agregar</Button>
+            <Button onClick={handleAddToCart}>Agregar al carrito</Button>
         </div>
     );
 };

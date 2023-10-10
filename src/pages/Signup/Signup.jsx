@@ -15,7 +15,7 @@ import { useDispatch } from "react-redux";
 import { setCurrentUser } from "../../redux/slices/userSlice";
 import useRedirect from "../../custom-hooks/useRedirect";
 
-import "../Signup/signup.css"
+import "./signup.css"
 
 const Signup = () => {
     const dispatch = useDispatch();
@@ -34,8 +34,8 @@ const Signup = () => {
         <Helmet title="Registrarse">
             <CommonSection title="Registrarse" />
             <section className="signup__section">
-                <div className="login-container">
-                    <h1>Crea tu cuenta</h1>
+                <div className="form__container">
+                    <h3 className='login-title'>Crea tu cuenta</h3>
                     <Formik
                         initialValues={{
                             username: '',
@@ -67,7 +67,7 @@ const Signup = () => {
 
 
                             <Submit type="button" className="auth__btn">
-                                Crear una cuenta
+                                Crear cuenta
                             </Submit>
                             <p>
                                 ¿Ya tienes cuenta? <Link to="/login">Login</Link>

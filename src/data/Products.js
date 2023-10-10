@@ -78,7 +78,7 @@ export const products = [
     },
     {
         id: 8,
-        title: 'Soldado del Invierno',
+        title: 'Capitán América',
         img: 'https://res.cloudinary.com/dnfwabuyr/image/upload/v1686755218/Buzos/soldado_del_invierno_frente_qucvl0.webp',
         img2: 'https://res.cloudinary.com/dnfwabuyr/image/upload/v1686755218/Buzos/soldado_del_invierno_espalda_gzxirr.webp',
         desc: 'Buzo Soldado del invierno',

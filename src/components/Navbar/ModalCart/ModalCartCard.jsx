@@ -46,7 +46,7 @@ const ModalCartCard = ({ img, title, desc, price, quantity, id, pricesale }) => 
             </div>
             <div className='quantity-container'>
                 <Increase
-                    bgColor='var(--btn-gradient-secondary)'
+
                     onClick={handleRemoveItem}
                 >
                     {quantity === 1 ? <IoMdTrash /> : <FaMinus />}
@@ -54,7 +54,7 @@ const ModalCartCard = ({ img, title, desc, price, quantity, id, pricesale }) => 
                 </Increase>
                 <Count>{quantity}</Count>
                 <Increase onClick={() => dispatch(addToCart({ img, title, desc, price, quantity, id, pricesale }))}>
-                    <BsPlusLg />
+                    <BsPlusLg className='plus' />
                 </Increase>
             </div>
         </div>

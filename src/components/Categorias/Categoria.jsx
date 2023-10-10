@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectCategory } from "../../redux/slices/categoriesSlice";
 import { motion } from "framer-motion"
 
+import "./categorias.css"
+
 export const Categoria = ({ img, title, category }) => {
 
     const { selectedCategory } = useSelector((state) => state.categories)
@@ -20,7 +22,7 @@ export const Categoria = ({ img, title, category }) => {
                 alt={category}
             />
             <h2>{title}</h2>
-            <div className="border-decoration"></div>
+
         </motion.div>
     );
 };

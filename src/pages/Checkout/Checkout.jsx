@@ -5,6 +5,8 @@ import ProductsCheckout from '../Checkout/Products/ProductsCheckout';
 import Helmet from "../../components/Helmet/Helmet"
 import CommonSection from "../../components/UI/common/CommonSection"
 
+import "./checkout.css"
+
 import { useSelector } from "react-redux";
 
 const Checkout = () => {
@@ -20,12 +22,12 @@ const Checkout = () => {
         <Helmet title="Checkout">
             <CommonSection title="Completar compra" />
             <div className='container-checkout'>
-                <CheckoutForm
+                <ProductsCheckout
                     cartItems={cartItems}
                     shippingCost={shippingCost}
                     price={totalPrice}
                 />
-                <ProductsCheckout
+                <CheckoutForm
                     cartItems={cartItems}
                     shippingCost={shippingCost}
                     price={totalPrice}

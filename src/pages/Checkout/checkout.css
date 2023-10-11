@@ -69,6 +69,8 @@
 
 .checkout-datos {
     display: flex;
+    width: 50%;
+    max-width: 600px;
 }
 
 .billing__container,

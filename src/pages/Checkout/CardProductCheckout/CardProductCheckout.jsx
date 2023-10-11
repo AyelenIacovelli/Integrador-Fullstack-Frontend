@@ -21,10 +21,12 @@ const CardProductCheckout = ({ img, title, desc, price, id, quantity, pricesale 
 
     return (
         <div className='card-container'>
-            <img className='img-card'
-                src={img}
-                alt={title}
-            />
+            <div className='img-card'>
+                <img
+                    src={img}
+                    alt={title}
+                />
+            </div>
             <div className='card-info'>
                 <h3 className='product-title'>{title}</h3>
                 <h3 className='text-title'>{desc}</h3>

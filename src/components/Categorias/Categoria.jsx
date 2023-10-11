@@ -1,28 +1,33 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 
 import { selectCategory } from "../../redux/slices/categoriesSlice";
 import { motion } from "framer-motion"
 
 import "./categorias.css"
 
-export const Categoria = ({ img, title, category }) => {
+export const Categoria = ({ img, title, category, isSelected }) => {
 
-    const { selectedCategory } = useSelector((state) => state.categories)
+    // const { selectedCategory } = useSelector((state) => state.categories)
 
     const dispatch = useDispatch();
 
+    const handleCategoryClick = () => {
+        if (category === "Todos") {
+            dispatch(selectCategory(null)); // Borra la selección si se hace clic en "Todas las Categorías".
+        } else {
+            dispatch(selectCategory(category));
+        }
+    };
+
+
     return (
-        <motion.div className="card-categoria"
-            selected={category === selectedCategory}
-            onClick={() => dispatch(selectCategory(category))}
+        <motion.div
+            className={`card-categoria ${isSelected ? "selected" : ""}`}
+            onClick={handleCategoryClick}
             whileTap={{ scale: 0.95 }}
         >
-            <img
-                src={img}
-                alt={category}
-            />
+            <img src={img} alt={category} />
             <h2>{title}</h2>
-
         </motion.div>
     );
 };

@@ -1,4 +1,12 @@
+import todo from "../assets/images/stitch.png"
+
 export const Categories = [
+    {
+        id: 0,
+        img: todo,
+        title: "Todos",
+        category: "Todos",
+    },
     {
         id: 1,
         img: "https://res.cloudinary.com/dnfwabuyr/image/upload/v1686755014/Tazas%20magicas/inuyasha_bunkwm.webp",
@@ -23,5 +31,4 @@ export const Categories = [
         title: "Buzos",
         category: "Buzos",
     },
-
 ];

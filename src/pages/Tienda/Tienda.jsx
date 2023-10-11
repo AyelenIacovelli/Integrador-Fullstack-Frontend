@@ -9,79 +9,79 @@ import Categorias from "../../components/Categorias/Categorias"
 
 const Tienda = () => {
 
-    // const [productsData, setProductsData] = useState(products)
-    // const [displayCount, setDisplayCount] = useState(8);
+  // const [productsData, setProductsData] = useState(products)
+  // const [displayCount, setDisplayCount] = useState(8);
 
-    // MANEJADOR DE FILTROS
-    // const handleFilter = (e) => {
-    //   const filterValue = e.target.value
+  // MANEJADOR DE FILTROS
+  // const handleFilter = (e) => {
+  //   const filterValue = e.target.value
 
-    //   if (filterValue === "") {
-    //     setProductsData(products);
-    //   }
+  //   if (filterValue === "") {
+  //     setProductsData(products);
+  //   }
 
-    //   if (filterValue === "Tazas") {
-    //     const filteredProducts = products.filter((item) => item.category === "Tazas")
+  //   if (filterValue === "Tazas") {
+  //     const filteredProducts = products.filter((item) => item.category === "Tazas")
 
-    //     setProductsData(filteredProducts)
-    //   }
-    //   if (filterValue === "Pijamas") {
-    //     const filteredProducts = products.filter((item) => item.category === "Pijamas")
+  //     setProductsData(filteredProducts)
+  //   }
+  //   if (filterValue === "Pijamas") {
+  //     const filteredProducts = products.filter((item) => item.category === "Pijamas")
 
-    //     setProductsData(filteredProducts)
-    //   }
-    //   if (filterValue === "Remeras") {
-    //     const filteredProducts = products.filter((item) => item.category === "Remeras")
+  //     setProductsData(filteredProducts)
+  //   }
+  //   if (filterValue === "Remeras") {
+  //     const filteredProducts = products.filter((item) => item.category === "Remeras")
 
-    //     setProductsData(filteredProducts)
-    //   }
-    //   if (filterValue === "Buzos") {
-    //     const filteredProducts = products.filter((item) => item.category === "Buzos")
+  //     setProductsData(filteredProducts)
+  //   }
+  //   if (filterValue === "Buzos") {
+  //     const filteredProducts = products.filter((item) => item.category === "Buzos")
 
-    //     setProductsData(filteredProducts)
-    //   }
-    //   setDisplayCount(8);
-    // }
+  //     setProductsData(filteredProducts)
+  //   }
+  //   setDisplayCount(8);
+  // }
 
-    // MANEJADOR DE ORDEN
-    // const handleOrder = (e) => {
-    //   const orderValue = e.target.value;
+  // MANEJADOR DE ORDEN
+  // const handleOrder = (e) => {
+  //   const orderValue = e.target.value;
 
-    //   if (orderValue === "ascending") {
-    //     const sortedProducts = [...productsData].sort((a, b) => a.price - b.price);
-    //     setProductsData(sortedProducts);
-    //   }
-    //   if (orderValue === "descending") {
-    //     const sortedProducts = [...productsData].sort((a, b) => b.price - a.price);
-    //     setProductsData(sortedProducts);
-    //     setDisplayCount(8);
-    //   }
-    // }
+  //   if (orderValue === "ascending") {
+  //     const sortedProducts = [...productsData].sort((a, b) => a.price - b.price);
+  //     setProductsData(sortedProducts);
+  //   }
+  //   if (orderValue === "descending") {
+  //     const sortedProducts = [...productsData].sort((a, b) => b.price - a.price);
+  //     setProductsData(sortedProducts);
+  //     setDisplayCount(8);
+  //   }
+  // }
 
-    // MANEJADOR DE BUSCADOR
-    // const handleSearch = e => {
-    //   const searchTerm = e.target.value
+  // MANEJADOR DE BUSCADOR
+  // const handleSearch = e => {
+  //   const searchTerm = e.target.value
 
-    //   const searchedProducts = products.filter(item => item.title.toLowerCase().includes(searchTerm.toLowerCase()))
+  //   const searchedProducts = products.filter(item => item.title.toLowerCase().includes(searchTerm.toLowerCase()))
 
-    //   setProductsData(searchedProducts)
-    //   setDisplayCount(8);
-    // }
+  //   setProductsData(searchedProducts)
+  //   setDisplayCount(8);
+  // }
 
-    // // Cargar más productos
-    // const loadMoreProducts = () => {
-    //   setDisplayCount((prevCount) => prevCount + 8);
-    // };
+  // // Cargar más productos
+  // const loadMoreProducts = () => {
+  //   setDisplayCount((prevCount) => prevCount + 8);
+  // };
 
 
-    const productsRef = useRef();
+  const productsRef = useRef();
 
-    return (
-        <Helmet title="Tienda">
-            <CommonSection title="Productos" />
-            <section className='shop__section'>
-                <div className='shop__container' ref={productsRef}>
-                    {/* <div className='filter__widget'>
+  return (
+    <Helmet title="Tienda">
+      <CommonSection title="Productos" />
+      <section className='shop__section'>
+        <div className='shop__container' ref={productsRef}>
+          {/* <div className='filter__widget'>
             <select onChange={handleFilter}>
               <option>Filtrar por categoría</option>
               <option value="">Todos</option>
@@ -102,13 +102,13 @@ const Tienda = () => {
             <input type="text" placeholder='Buscar por título o personaje...' onChange={handleSearch} />
             <span><FaSearch /></span>
           </div> */}
-                    <Categorias />
-                </div>
-            </section>
+          <Categorias />
+        </div>
+      </section>
 
-            <section className="products__section">
-                <div className="products__container">
-                    {/* {productsData.length === 0 ? (
+      <section className="products__section">
+        <div className="products__container">
+          {/* {productsData.length === 0 ? (
             <h1>No se encontraron productos</h1>
           ) : (
             <>
@@ -121,11 +121,11 @@ const Tienda = () => {
               )}
             </>
           )} */}
-                    <ProductsList />
-                </div>
-            </section>
-        </Helmet>
-    )
+          <ProductsList />
+        </div>
+      </section>
+    </Helmet>
+  )
 }
 
 export default Tienda

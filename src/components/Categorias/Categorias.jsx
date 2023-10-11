@@ -6,18 +6,20 @@ import "./categorias.css"
 
 const Categorias = () => {
 
-    const { categories } = useSelector((state) => state.categories)
+    const { categories, selectedCategory } = useSelector((state) => state.categories);
 
     // console.log(categories);
 
     return (
         <div className="categorias-container">
-            {
-                categories.map((category) => {
-                    return <Categoria {...category} key={category.id} />
-                })
-            }
+            {categories.map((category) => {
+                return (
+                    <Categoria {...category} key={category.id} isSelected={category.category === selectedCategory} />
+                );
+            })}
         </div>
+
+
     );
 };
 

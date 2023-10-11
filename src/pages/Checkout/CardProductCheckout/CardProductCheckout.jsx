@@ -21,7 +21,7 @@ const CardProductCheckout = ({ img, title, desc, price, id, quantity, pricesale 
 
     return (
         <div className='card-container'>
-            <img
+            <img className='img-card'
                 src={img}
                 alt={title}
             />

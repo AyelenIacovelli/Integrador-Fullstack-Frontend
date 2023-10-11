@@ -29,6 +29,7 @@
     overflow-y: scroll;
     width: 100%;
     flex-direction: column;
+    align-items: center;
 }
 
 .checkout__section .productos-container .cards-wrapper .card-container {
@@ -36,7 +37,7 @@
     width: 100%;
 
     & img {
-        width: 50%;
+        width: 250px;
     }
 
     & .card-info {

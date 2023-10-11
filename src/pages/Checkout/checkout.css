@@ -1,4 +1,4 @@
-.checkout__section {
+.container__checkout {
     align-items: center;
     display: flex;
     height: calc(100vh - 70px);
@@ -9,7 +9,7 @@
     width: 100%;
 }
 
-.checkout__section .productos-container {
+.productos-container {
     align-items: center;
     display: flex;
     /* flex-direction: column; */

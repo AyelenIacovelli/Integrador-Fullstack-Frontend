@@ -3,7 +3,7 @@ import { formatPrice } from '../../../utils';
 
 import CardProductCheckout from '../CardProductCheckout/CardProductCheckout';
 
-// import "./productsCheckout.css"
+import "./checkout.css"
 
 
 const ProductsCheckout = ({ cartItems, shippingCost, price }) => {

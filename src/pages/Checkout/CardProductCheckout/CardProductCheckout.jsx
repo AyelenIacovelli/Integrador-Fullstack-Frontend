@@ -11,6 +11,8 @@ import Increase from '../../../components/UI/Increase/Increase';
 import { useDispatch } from 'react-redux';
 import { addToCart, removeFromCart } from '../../../redux/slices/cartSlice';
 
+import "../checkout.css"
+
 const CardProductCheckout = ({ img, title, desc, price, id, quantity, pricesale }) => {
 
     const dispatch = useDispatch();

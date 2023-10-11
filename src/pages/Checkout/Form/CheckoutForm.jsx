@@ -66,7 +66,7 @@ const CheckoutForm = ({ cartItems, price, shippingCost }) => {
 
                 {
                     ({ isSubmitting }) => (
-                        <Form>
+                        <Form className='form-check'>
                             <Input
                                 htmlFor='nombre'
                                 type='text'

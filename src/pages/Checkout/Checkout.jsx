@@ -21,7 +21,7 @@ const Checkout = () => {
     return (
         <Helmet title="Checkout">
             <CommonSection title="Completar compra" />
-            <section className='checkout__section'>
+            <section className='container__section'>
                 <ProductsCheckout
                     cartItems={cartItems}
                     shippingCost={shippingCost}

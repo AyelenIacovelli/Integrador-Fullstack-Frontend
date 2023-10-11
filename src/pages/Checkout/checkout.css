@@ -10,15 +10,6 @@
     margin-bottom: 20px;
 }
 
-.checkout__container {
-    max-width: 1200px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    align-items: center;
-}
-
 .checkout-title {
     padding: 80px 0 10px 0;
     color: black;

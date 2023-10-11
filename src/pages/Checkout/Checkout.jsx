@@ -21,7 +21,7 @@ const Checkout = () => {
     return (
         <Helmet title="Checkout">
             <CommonSection title="Completar compra" />
-            <div className='container-checkout'>
+            <section className='checkout__section'>
                 <ProductsCheckout
                     cartItems={cartItems}
                     shippingCost={shippingCost}
@@ -32,7 +32,7 @@ const Checkout = () => {
                     shippingCost={shippingCost}
                     price={totalPrice}
                 />
-            </div>
+            </section>
         </Helmet>
     );
 };

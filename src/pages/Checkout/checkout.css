@@ -32,7 +32,7 @@
     align-items: center;
 }
 
-.checkout__section .productos-container .cards-wrapper .card-container {
+.container__checkout .productos-container .cards-wrapper .card-container {
     display: flex;
     width: 100%;
 
@@ -50,7 +50,7 @@
     }
 }
 
-.checkout__section .productos-container .cards-wrapper .card-container .quantity-container {
+.container__checkout .productos-container .cards-wrapper .card-container .quantity-container {
     color: #000;
     display: flex;
     width: 15%;

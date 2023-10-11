@@ -1,104 +1,27 @@
-.container__checkout {
-
+.checkout__section {
     display: flex;
-    height: calc(100vh - 70px);
-    justify-content: center;
-    margin-bottom: 20px;
-    max-width: 1200px;
+    width: 100%;
     padding: 20px 50px;
-    width: 100%;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../../assets/images/bg1.jpg);
+    align-items: center;
+    height: calc(100vh - 70px);
+    margin-bottom: 20px;
 }
 
-.productos-container {
-    align-items: center;
+.checkout__container {
+    max-width: 1200px;
+    width: 100%;
     display: flex;
-    /* flex-direction: column; */
+    justify-content: center;
     gap: 20px;
-    justify-content: center;
-    max-width: 600px;
-    width: 50%;
-    height: 500px;
-
-}
-
-.cards-wrapper {
-    display: flex;
-    height: 470px;
-    overflow-x: hidden;
-    overflow-y: scroll;
-    width: 100%;
-    flex-direction: column;
-    align-items: center;
-}
-
-.container__checkout .productos-container .cards-wrapper .card-container {
-    display: flex;
-    width: 100%;
-}
-
-.img-card img {
-    width: 150px;
-    height: 150px;
-}
-
-.container__checkout .productos-container .cards-wrapper .card-container .quantity-container {
-    color: #000;
-    display: flex;
-    width: 15%;
-
-    & .increase {
-        color: black;
-    }
-}
-
-.card-info {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.form-check {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
     align-items: center;
 }
 
 .checkout-title {
     padding: 80px 0 10px 0;
     color: black;
-}
-
-
-.checkout-datos {
-    display: flex;
-    width: 50%;
-    max-width: 600px;
-    flex-direction: column;
-    align-items: center;
-}
-
-.input-box {
-    margin: 0;
-    width: 100%;
-    align-items: center;
-}
-
-.input-label {
-    background: transparent;
-    color: black;
-    text-align: center;
-}
-
-.btn-submit {
-    margin-top: 50px;
-    padding: 12px 30px;
-    background: black;
-    color: white;
-}
-
-.btn-submit:hover {
-    color: bisque;
 }
 
 .billing__container,

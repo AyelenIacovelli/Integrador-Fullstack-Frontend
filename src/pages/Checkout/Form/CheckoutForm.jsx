@@ -32,7 +32,7 @@ const CheckoutForm = ({ cartItems, price, shippingCost }) => {
 
     return (
         <div className='checkout-datos'>
-            <h2>Ingresá tus datos</h2>
+            <h2 className='title-checkout-datos'>Ingresá tus datos</h2>
             <Formik
                 initialValues={{
                     name: '',

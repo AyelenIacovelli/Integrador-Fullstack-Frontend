@@ -2,6 +2,7 @@
     display: flex;
     max-width: 1200px;
     width: 100%;
+    gap: 10px;
 }
 
 .productos-container-checkout {
@@ -23,6 +24,7 @@
     overflow-y: scroll;
     overflow-x: hidden;
     height: 500px;
+    padding: 10px;
 }
 
 .card-container-checkout {
@@ -82,6 +84,25 @@
 
 .envio {
     gap: 6px;
+}
+
+.total {
+    display: flex;
+    gap: 6px;
+}
+
+.title-checkout-datos {
+    text-align: center;
+}
+
+.checkout-datos {
+    width: 50%;
+}
+
+.form-check {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .billing__container,

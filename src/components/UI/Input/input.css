@@ -1,21 +1,25 @@
 .input-box {
     display: flex;
-    margin: 1rem 0;
+    /* margin: 1rem 0; */
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    width: 50%;
+    /* justify-content: flex-start; */
+    align-items: center;
+    /* width: 50%; */
+    gap: 5px;
+    width: 100%;
 }
 
 .input-label {
-    background-color: gray;
+    /* background-color: gray; */
     outline: none;
-    border-radius: 8px;
+    /* border-radius: 8px; */
     height: 30px;
     padding: 0.5rem 1rem;
-    color: white;
-    width: 70%;
-    margin-top: 1rem;
+    color: black;
+    font-weight: 600;
+    text-align: center;
+    /* width: 70%; */
+    /* margin-top: 1rem; */
 }
 
 .input-label::placeholder {

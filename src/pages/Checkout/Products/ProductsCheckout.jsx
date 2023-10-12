@@ -26,18 +26,18 @@ const ProductsCheckout = ({ cartItems, shippingCost, price }) => {
 
 
             </div>
-            <div className='price-container-checkout'>
-                <div className='subtotal-checkout'>
+            <div className='price-container'>
+                <div className='subtotal'>
                     <p>Subtotal</p>
                     <span>{formatPrice(price)}</span>
                 </div>
-                <div className='subtotal-checkout envio'>
+                <div className='subtotal envio'>
                     <p>Envío:</p>
                     <span>{formatPrice(shippingCost)}</span>
                 </div>
-                <div className='subtotal-checkout total'>
+                <div className='subtotal total'>
                     <p>Total:</p>
-                    <span className='price-total-checkout'>{formatPrice(price + shippingCost)}</span>
+                    <span className='price-total'>{formatPrice(price + shippingCost)}</span>
                 </div>
             </div>
         </div>

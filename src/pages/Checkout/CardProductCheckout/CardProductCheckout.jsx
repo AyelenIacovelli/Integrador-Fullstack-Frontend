@@ -20,22 +20,22 @@ const CardProductCheckout = ({ img, title, desc, price, id, quantity, pricesale 
     const isPriceSale = pricesale !== undefined; // Comprueba si 'pricesale' está definido
 
     return (
-        <div className='card-container'>
-            <div className='img-card'>
+        <div className='card-container-checkout'>
+            <div className='img-card-checkout'>
                 <img
                     src={img}
                     alt={title}
                 />
             </div>
-            <div className='card-info'>
-                <h3 className='product-title'>{title}</h3>
-                <h3 className='text-title'>{desc}</h3>
+            <div className='card-info-checkout'>
+                <h3 className='product-title-checkout'>{title}</h3>
+                <h3 className='text-title-checkout'>{desc}</h3>
                 <span className="price">
                     <span className={`price-original ${isPriceSale ? 'strikethrough' : ''}`}>${price}</span>
                     {isPriceSale && <span className="price-sale">${pricesale}</span>}
                 </span>
             </div>
-            <span className='quantity-container'>
+            <span className='quantity-container-checkout'>
                 <Increase
                     onClick={() => dispatch(removeFromCart(id))}
                 >

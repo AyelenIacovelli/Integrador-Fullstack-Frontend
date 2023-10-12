@@ -123,7 +123,7 @@ const CheckoutForm = ({ cartItems, price, shippingCost }) => {
                             >
                                 Provincia
                             </Input>
-                            <div>
+                            <div className='btn-checkout'>
                                 <Submit disabled={!cartItems.length || isSubmitting}>
                                     {
                                         isSubmitting ? <Loader /> : "Iniciar Pedido"

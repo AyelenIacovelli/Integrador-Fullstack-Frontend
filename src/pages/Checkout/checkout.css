@@ -54,11 +54,17 @@
 
 .quantity-container-checkout {
     color: black;
+    display: flex;
+    align-items: center;
+}
+
+.quantity-container-checkout button .increase {
+    color: black;
 }
 
 .price-container-check {
     border-top: 1px solid black;
-    padding-top: 5px;
+    padding-top: 15px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -67,6 +73,15 @@
 .subtotal-check,
 .price-total-check {
     color: black;
+}
+
+.subtotal-check p {
+    color: black;
+    font-weight: 700;
+}
+
+.envio {
+    gap: 6px;
 }
 
 .billing__container,

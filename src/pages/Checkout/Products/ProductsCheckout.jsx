@@ -9,7 +9,7 @@ import "../checkout.css"
 const ProductsCheckout = ({ cartItems, shippingCost, price }) => {
     return (
         <div className='productos-container-checkout'>
-            <h2 className='products-title'>Tu pedido</h2>
+            <h2 className='products-title-check'>Tu pedido</h2>
             <div className='cards-wrapper'>
 
                 {

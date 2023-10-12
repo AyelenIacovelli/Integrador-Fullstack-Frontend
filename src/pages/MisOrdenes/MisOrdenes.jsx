@@ -9,6 +9,8 @@ import "./misOrdenes.css"
 
 import { getOrders } from '../../axios/axios-orders';
 import { clearError, fetchOrdersFail } from '../../redux/slices/ordersSlice';
+import Helmet from '../../components/Helmet/Helmet';
+import CommonSection from '../../components/UI/common/CommonSection';
 
 const MisOrdenes = () => {
     const navigate = useNavigate();
@@ -30,19 +32,20 @@ const MisOrdenes = () => {
     }, [currentUser, orders, error, dispatch])
 
     return (
-        <>
+        <Helmet title="Ordenes">
+            <CommonSection title="Mis Ordenes" />
             <div className='misordenes-container'>
-                <h2>Mis órdenes</h2>
+
                 <CardsMisOrdenes />
-                <div className='misordenes-btncontainer'>
-                    <Button onClick={() => navigate('/')}>Volver a comprar</Button>
-                </div>
+                {/* <div className='misordenes-btncontainer'>
+                    <Button onClick={() => navigate('/')}>Volver a la tienda</Button>
+                </div> */}
             </div>
-            <img
+            {/* <img
                 src='https://res.cloudinary.com/dcatzxqqf/image/upload/v1656648434/coding/NucbaZappi/Assets/Pattern_lt5uru.png'
                 alt=''
-            />
-        </>
+            /> */}
+        </Helmet>
     );
 };
 

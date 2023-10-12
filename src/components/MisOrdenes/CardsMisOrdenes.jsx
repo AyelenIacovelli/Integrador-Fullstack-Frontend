@@ -1,6 +1,8 @@
 import { useSelector } from 'react-redux';
 import CardMisOrdenes from './CardMisOrdenes';
 import Loader from "../UI/Loader/Loader"
+import { Link } from 'react-router-dom';
+import "./cardMisOrdenes.css"
 
 const CardsMisOrdenes = () => {
 
@@ -23,7 +25,7 @@ const CardsMisOrdenes = () => {
                         return <CardMisOrdenes key={order._id} {...order} />
                     })
                 ) : (
-                    <h2>!¿Qué esperas para hacer tu primer pedido?!</h2>
+                    <h2>¡Oh no! Aún no tienes órdenes realizadas. ¿Qué esperas para navegar nuestra <Link to={"/tienda"} className='link-tienda'>Tienda</Link>?</h2>
                 )
             }
 

@@ -19,7 +19,7 @@ const CardMisOrdenes = ({ createdAt, status, total, _id, pricesale }) => {
             <div className="text-container">
                 <h2 className="title">ID de la orden: #{_id.slice(0, 7)}</h2>
                 <p className="id">Fecha {formatDate(createdAt)}</p>
-                <p className="price">{formattedTotal}</p>
+                <p className="price-orders">{formattedTotal}</p>
             </div>
             <OrderStatus status={status} />
         </div>

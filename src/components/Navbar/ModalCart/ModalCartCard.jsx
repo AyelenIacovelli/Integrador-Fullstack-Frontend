@@ -37,7 +37,7 @@ const ModalCartCard = ({ img, title, desc, price, quantity, id, pricesale }) => 
                 alt={title}
             />
             <div className='text-container'>
-                <h3 className='card-title'>{title}</h3>
+                <h3 className='card-title-h3'>{title}</h3>
                 <p className='text'>{desc}</p>
                 <span className="price">
                     <span className={`price-original ${isPriceSale ? 'strikethrough' : ''}`}>${price}</span>

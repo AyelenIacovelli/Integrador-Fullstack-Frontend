@@ -13,6 +13,8 @@ import { clearCart } from '../../../redux/slices/cartSlice';
 
 import Loader from "../../../components/UI/Loader/Loader"
 
+import "../../Tienda/tienda.css"
+
 const CheckoutForm = ({ cartItems, price, shippingCost }) => {
 
     const validationSchema = Yup.object().shape({

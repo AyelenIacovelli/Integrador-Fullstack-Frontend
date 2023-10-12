@@ -8,7 +8,7 @@ import "../checkout.css"
 
 const ProductsCheckout = ({ cartItems, shippingCost, price }) => {
     return (
-        <div className='productos-container'>
+        <div className='productos-container-checkout'>
             <h2 className='products-title'>Tu pedido</h2>
             <div className='cards-wrapper'>
 
@@ -26,18 +26,18 @@ const ProductsCheckout = ({ cartItems, shippingCost, price }) => {
 
 
             </div>
-            <div className='price-container'>
-                <div className='subtotal'>
+            <div className='price-container-checkout'>
+                <div className='subtotal-checkout'>
                     <p>Subtotal</p>
                     <span>{formatPrice(price)}</span>
                 </div>
-                <div className='subtotal envio'>
+                <div className='subtotal-checkout envio'>
                     <p>Envío:</p>
                     <span>{formatPrice(shippingCost)}</span>
                 </div>
-                <div className='subtotal total'>
+                <div className='subtotal-checkout total'>
                     <p>Total:</p>
-                    <span className='price-total'>{formatPrice(price + shippingCost)}</span>
+                    <span className='price-total-checkout'>{formatPrice(price + shippingCost)}</span>
                 </div>
             </div>
         </div>

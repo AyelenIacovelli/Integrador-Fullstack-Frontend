@@ -9,7 +9,7 @@ import ModalCart from './ModalCart/ModalCart';
 import ModalUser from './ModalUser/ModalUser';
 import './navbar.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { toggleHiddenMenu } from '../../redux/slices/userSlice';
+// import { toggleHiddenMenu } from '../../redux/slices/userSlice';
 
 import logo2 from '../../assets/images/logogg.png';
 

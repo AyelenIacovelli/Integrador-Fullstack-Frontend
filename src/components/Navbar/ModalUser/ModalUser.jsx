@@ -24,21 +24,28 @@ const ModalUser = () => {
 
 
     return (
-        <AnimatePresence>
+        <>
             {!hiddenMenu && (
-                <motion.div className='modal-container'
-                    initial={{ translateX: 600 }}
-                    animate={{ translateX: 0 }}
-                    exit={{ translateX: 600 }}
-                    transition={{ duration: 0.5 }}
-                    key='cart-user'
-                >
-                    <h2 className='username'>{currentUser?.nombre}</h2>
-                    <Link to='/mis-ordenes'>Mis Ordenes</Link>
-                    <span onClick={handleLogout}>Cerrar Sesion</span>
-                </motion.div>
+                <motion.div className={`modal-overlay ${hiddenMenu ? 'hidden' : ''}`}
+                    onClick={() => dispatch(toggleHiddenMenu())}
+                ></motion.div>
             )}
-        </AnimatePresence>
+            <AnimatePresence>
+                {!hiddenMenu && (
+                    <motion.div className='modal-container'
+                        initial={{ translateX: 600 }}
+                        animate={{ translateX: 0 }}
+                        exit={{ translateX: 600 }}
+                        transition={{ duration: 0.5 }}
+                        key='cart-user'
+                    >
+                        <h2 className='username'>{currentUser?.nombre}</h2>
+                        <Link to='/mis-ordenes'>Mis Ordenes</Link>
+                        <span onClick={handleLogout}>Cerrar Sesion</span>
+                    </motion.div>
+                )}
+            </AnimatePresence>
+        </>
     );
 };
 

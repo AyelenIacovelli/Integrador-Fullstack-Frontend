@@ -21,7 +21,6 @@ const Resumen = () => {
     const orders = useSelector(state => state.orders.orders)
     const { currentUser } = useSelector(state => state.user)
 
-
     useEffect(() => {
         if (!orders) {
             getOrders(dispatch, currentUser)
@@ -41,8 +40,6 @@ const Resumen = () => {
                 <div className="products-container">
                     {
                         visitedOrder?.items.map((item) => {
-                            console.log(visitedOrder?.item);
-                            console.log("Valor de img:", item.img); // Agrega esta línea para verificar la prop img
                             return <CardResumen {...item} key={item._id} />
                         })
                     }

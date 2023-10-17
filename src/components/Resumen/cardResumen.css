@@ -13,12 +13,14 @@
     justify-content: center;
     align-items: center;
     gap: 20px;
+    color: black;
 }
 
 .price-container {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    color: black;
 }
 
 .product-price {

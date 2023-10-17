@@ -12,10 +12,6 @@ const CardResumen = ({ img, title, desc, quantity, price, pricesale }) => {
 
         <div className="product">
             <div className="product-left">
-                <img
-                    src={img}
-                    alt={title}
-                />
                 <div>
                     <h3>{title}</h3>
                     <p>{desc}</p>

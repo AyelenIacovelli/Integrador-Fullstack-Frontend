@@ -27,36 +27,39 @@ const Resumen = () => {
     console.log(visitedOrder);
 
     return (
-        <div className="resumen-container">
-            <div className="resumen-title">
-                <h1>Resumen Orden: #{visitedOrder?._id.slice(0, 7)}</h1>
-                <Link borderRadius="20" to="/mis-ordenes"><span className="mis-ordenes">Mis ordenes</span></Link>
-            </div>
-            <h2>Productos:</h2>
-            <div className="products-container">
-                {
-                    visitedOrder?.items.map((item) => {
-                        return <CardResumen key={item._id} {...item} />
-                    })
-                }
-            </div>
+        <Helmet title="Resumen">
+            <CommonSection title="Mi Resúmen" />
+            <div className="resumen-container">
+                <div className="resumen-title">
+                    <h1>Resumen Orden: #{visitedOrder?._id.slice(0, 7)}</h1>
+                    <Link borderRadius="20" to="/mis-ordenes"><span className="mis-ordenes">Mis ordenes</span></Link>
+                </div>
+                <h2>Productos:</h2>
+                <div className="products-container">
+                    {
+                        visitedOrder?.items.map((item) => {
+                            return <CardResumen key={item._id} {...item} />
+                        })
+                    }
+                </div>
 
-            <div className="resumen-container-info">
-                <h3>Costos:</h3>
-                <div className="costo-producto">
-                    <p>Costo de productos</p>
-                    <span>{formatPrice(visitedOrder?.price)}</span>
-                </div>
-                <div className="costo-producto envio">
-                    <p>Costo de envío</p>
-                    <span>{formatPrice(visitedOrder?.shippingCost)}</span>
-                </div>
-                <div className="costo-producto total">
-                    <p>Total</p>
-                    <span>{formatPrice(visitedOrder?.total)}</span>
+                <div className="resumen-container-info">
+                    <h3>Costos:</h3>
+                    <div className="costo-producto">
+                        <p>Costo de productos</p>
+                        <span>{formatPrice(visitedOrder?.price)}</span>
+                    </div>
+                    <div className="costo-producto envio">
+                        <p>Costo de envío</p>
+                        <span>{formatPrice(visitedOrder?.shippingCost)}</span>
+                    </div>
+                    <div className="costo-producto total">
+                        <p>Total</p>
+                        <span>{formatPrice(visitedOrder?.total)}</span>
+                    </div>
                 </div>
             </div>
-        </div>
+        </Helmet>
     );
 };
 

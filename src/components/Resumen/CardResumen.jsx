@@ -1,6 +1,5 @@
 import { formatPrice } from "../../utils";
-import Helmet from "../Helmet/Helmet";
-import CommonSection from "../UI/common/CommonSection";
+
 import "./cardResumen.css"
 
 

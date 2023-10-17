@@ -36,9 +36,8 @@ const ModalCart = () => {
     return (
         <>
             {!hiddenCart && (
-                <motion.div className='modal-overlay'
+                <motion.div className={`modal-overlay ${hiddenCart ? 'hidden' : ''}`}
                     onClick={() => dispatch(toggleHiddenCart())}
-
                 ></motion.div>
             )}
             <AnimatePresence>

@@ -33,13 +33,14 @@ const Resumen = () => {
             <CommonSection title="Resumen de orden" />
             <div className="resumen-container">
                 <div className="resumen-title">
-                    <h1>Resumen Orden: #{visitedOrder?._id.slice(0, 7)}</h1>
+                    <h1>Orden: #{visitedOrder?._id.slice(0, 7)}</h1>
                     <Link borderRadius="20" to="/mis-ordenes"><span className="mis-ordenes">Mis ordenes</span></Link>
                 </div>
                 <h2>Productos:</h2>
                 <div className="products-container">
                     {
                         visitedOrder?.items.map((item) => {
+                            console.log("Valor de img:", item.img); // Agrega esta línea para verificar la prop img
                             return <CardResumen {...item} key={item._id} />
                         })
                     }

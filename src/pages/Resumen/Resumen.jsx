@@ -8,6 +8,8 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getOrders } from "../../axios/axios-orders";
 import { useParams } from "react-router-dom";
+import Helmet from "../../components/Helmet/Helmet"
+import CommonSection from "../../components/UI/common/CommonSection"
 
 const Resumen = () => {
 
@@ -27,39 +29,40 @@ const Resumen = () => {
     }, [orderId, currentUser, orders, dispatch])
 
     return (
-
-        <div className="resumen-container">
-            <div className="resumen-title">
-                <h1>Resumen Orden: #{visitedOrder?._id.slice(0, 7)}</h1>
-                <Link borderRadius="20" to="/mis-ordenes"><span className="mis-ordenes">Mis ordenes</span></Link>
-            </div>
-            <h2>Productos:</h2>
-            <div className="products-container">
-                {
-                    visitedOrder?.items.map((item) => {
-                        return <CardResumen {...item} key={item._id} />
-                    })
-                }
-            </div>
-
-            <div className="resumen-container-info">
-                <h3>Costos:</h3>
-                <div className="costo-producto">
-                    <p>Costo de productos</p>
-                    <span>{formatPrice(visitedOrder?.price)}</span>
+        <Helmet title="Resumen">
+            <CommonSection title="Resumen de orden" />
+            <div className="resumen-container">
+                <div className="resumen-title">
+                    <h1>Resumen Orden: #{visitedOrder?._id.slice(0, 7)}</h1>
+                    <Link borderRadius="20" to="/mis-ordenes"><span className="mis-ordenes">Mis ordenes</span></Link>
                 </div>
-                <div className="costo-producto envio">
-                    <p>Costo de envío</p>
-                    <span>{formatPrice(visitedOrder?.shippingCost)}</span>
+                <h2>Productos:</h2>
+                <div className="products-container">
+                    {
+                        visitedOrder?.items.map((item) => {
+                            return <CardResumen {...item} key={item._id} />
+                        })
+                    }
                 </div>
-                <div className="costo-producto total">
-                    <p>Total</p>
-                    <span>{formatPrice(visitedOrder?.total)}</span>
+
+                <div className="resumen-container-info">
+                    <h3>Costos:</h3>
+                    <div className="costo-producto">
+                        <p>Costo de productos</p>
+                        <span>{formatPrice(visitedOrder?.price)}</span>
+                    </div>
+                    <div className="costo-producto envio">
+                        <p>Costo de envío</p>
+                        <span>{formatPrice(visitedOrder?.shippingCost)}</span>
+                    </div>
+                    <div className="costo-producto total">
+                        <p>Total</p>
+                        <span>{formatPrice(visitedOrder?.total)}</span>
+                    </div>
                 </div>
             </div>
-        </div>
 
-
+        </Helmet>
 
 
     );

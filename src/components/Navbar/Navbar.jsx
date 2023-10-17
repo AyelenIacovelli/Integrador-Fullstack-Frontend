@@ -1,19 +1,20 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Link, useNavigate } from 'react-router-dom';
+import { motion } from "framer-motion";
+import { Link, useNavigate } from "react-router-dom";
 
-import { FaUserAlt, FaHeart, FaCheckCircle } from 'react-icons/fa';
+import { FaUserAlt, FaHeart, FaCheckCircle } from "react-icons/fa";
+// import { HiHome } from "react-icons/hi";
 
-import CartIcon from './CartIcon/CartIcon';
-import ModalCart from './ModalCart/ModalCart';
-import ModalUser from './ModalUser/ModalUser';
-import './navbar.css';
-import { useDispatch, useSelector } from 'react-redux';
-// import { toggleHiddenMenu } from '../../redux/slices/userSlice';
+import CartIcon from "./CartIcon/CartIcon";
+import ModalCart from "./ModalCart/ModalCart";
+import ModalUser from "./ModalUser/ModalUser";
+import "./navbar.css"
+import { useDispatch, useSelector } from "react-redux";
+import { toggleHiddenMenu } from "../../redux/slices/userSlice";
 
-import logo2 from '../../assets/images/logogg.png';
+import logo2 from "../../assets/images/logogg.png"
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef } from "react";
+
 
 function Navbar() {
     const navigate = useNavigate();
@@ -24,24 +25,23 @@ function Navbar() {
     const favorites = useSelector((state) => state.favs.favorites);
     const favoriteProductsCount = favorites ? favorites.length : 0;
 
-    const [modalUserOpen, setModalUserOpen] = useState(false);
-    const [modalCartOpen, setModalCartOpen] = useState(false);
+    const headerRef = useRef(null)
 
-    const headerRef = useRef(null);
+
 
     const stickyHeaderFunc = () => {
         if (window.scrollY > 100) {
-            headerRef.current.classList.add('sticky__header');
+            headerRef.current.classList.add("sticky__header");
         } else {
-            headerRef.current.classList.remove('sticky__header');
+            headerRef.current.classList.remove("sticky__header");
         }
     };
 
     useEffect(() => {
-        window.addEventListener('scroll', stickyHeaderFunc);
+        window.addEventListener("scroll", stickyHeaderFunc);
 
         return () => {
-            window.removeEventListener('scroll', stickyHeaderFunc);
+            window.removeEventListener("scroll", stickyHeaderFunc);
         };
     }, []);
 
@@ -49,62 +49,69 @@ function Navbar() {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     };
 
+
     return (
-        <header className="header" ref={headerRef}>
+        <header className='header' ref={headerRef}>
             <div className="navbar-container">
+                <ModalCart />
+                <ModalUser />
                 <div className="logo">
                     <Link to="/" onClick={navigateToTop}>
-                        <img src={logo2} alt="logo" />
+                        <img src={logo2} alt='logo' />
                     </Link>
                 </div>
-                <div className={'links-container'}>
+                <div className={"links-container"}>
                     <motion.div whileTap={{ scale: 0.97 }}>
-                        <Link to="/">Home</Link>
+                        <Link to="/">
+                            {/* <div>
+                            <HiHome />
+                        </div> */}
+                            Home
+                        </Link>
                     </motion.div>
                     <motion.div whileTap={{ scale: 0.97 }}>
-                        <Link to="/tienda">Tienda</Link>
+                        <Link to="/tienda">
+                            {/* <div>
+                            <FaShoppingCart />
+                        </div> */}
+                            Tienda
+                        </Link>
                     </motion.div>
                     <motion.div whileTap={{ scale: 0.97 }}>
                         <Link to="/favoritos">
                             <div>
                                 <FaHeart />
-                                <span className="badge">{favoriteProductsCount}</span>
+                                <span className='badge'>{favoriteProductsCount}</span>
                             </div>
                         </Link>
                     </motion.div>
 
                     <div className="cart-nav">
-                        <CartIcon onClick={() => setModalCartOpen(!modalCartOpen)} />
+                        <CartIcon />
                     </div>
 
                     <div className="user-nav">
-                        <div
-                            className="link-container user-container"
-                            onClick={() => {
-                                if (currentUser) {
-                                    setModalUserOpen(!modalUserOpen);
-                                } else {
-                                    navigate('/login');
-                                }
-                                setModalCartOpen(false); // Cierra ModalCart
-                            }}
+                        <div className="link-container user-container" onClick={() => {
+                            currentUser ?
+                                dispatch(toggleHiddenMenu()) :
+                                navigate("/login")
+                        }
+                        }
                         >
                             <span className="span">
-                                {currentUser ? (
-                                    <>
-                                        {currentUser.isVerified ? <FaCheckCircle /> : null}
-                                        {currentUser.nombre}
-                                    </>
-                                ) : (
-                                    'Iniciar Sesión'
-                                )}
+                                {
+                                    currentUser ?
+                                        <>
+                                            {currentUser.isVerified ? <FaCheckCircle /> : null}
+                                            {currentUser.nombre}
+                                        </> :
+                                        "Iniciar Sesión"
+                                }
                             </span>
                             {currentUser ? null : <FaUserAlt />}
                         </div>
                     </div>
                 </div>
-                <ModalCart visible={modalCartOpen} />
-                <ModalUser visible={modalUserOpen} />
             </div>
         </header>
     );

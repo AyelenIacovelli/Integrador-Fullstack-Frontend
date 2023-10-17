@@ -40,10 +40,10 @@ const Resumen = () => {
                 <h2>Productos:</h2>
                 <div className="products-container">
                     {
-                        visitedOrder?.products.map((product) => {
-                            console.log(visitedOrder?.product)
-                            console.log("Valor de img:", product.img); // Agrega esta línea para verificar la prop img
-                            return <CardResumen {...product} key={product._id} />
+                        visitedOrder?.items.map((item) => {
+                            console.log(visitedOrder?.item);
+                            console.log("Valor de img:", item.img); // Agrega esta línea para verificar la prop img
+                            return <CardResumen {...item} key={item._id} />
                         })
                     }
                 </div>

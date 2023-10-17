@@ -21,6 +21,7 @@ const Resumen = () => {
     const orders = useSelector(state => state.orders.orders)
     const { currentUser } = useSelector(state => state.user)
 
+
     useEffect(() => {
         if (!orders) {
             getOrders(dispatch, currentUser)
@@ -39,9 +40,10 @@ const Resumen = () => {
                 <h2>Productos:</h2>
                 <div className="products-container">
                     {
-                        visitedOrder?.items.map((item) => {
-                            console.log("Valor de img:", item.img); // Agrega esta línea para verificar la prop img
-                            return <CardResumen {...item} key={item._id} />
+                        visitedOrder?.products.map((product) => {
+                            console.log(visitedOrder?.product)
+                            console.log("Valor de img:", product.img); // Agrega esta línea para verificar la prop img
+                            return <CardResumen {...product} key={product._id} />
                         })
                     }
                 </div>

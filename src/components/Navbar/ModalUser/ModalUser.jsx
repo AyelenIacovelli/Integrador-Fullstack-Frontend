@@ -15,7 +15,6 @@ const ModalUser = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate()
 
-
     const handleLogout = () => {
         dispatch(setCurrentUser(null));
         dispatch(toggleHiddenMenu());

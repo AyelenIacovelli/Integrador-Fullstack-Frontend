@@ -47,3 +47,7 @@
     align-items: center;
     font-weight: bold;
 }
+
+.costo-producto p {
+    color: black;
+}

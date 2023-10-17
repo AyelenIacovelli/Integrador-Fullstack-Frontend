@@ -12,10 +12,10 @@ const CardResumen = ({ img, title, desc, quantity, price, pricesale }) => {
 
         <div className="product">
             <div className="product-left">
-                <div>
-                    <h3>{title}</h3>
-                    <p>{desc}</p>
-                </div>
+
+                <h3>{title}</h3>
+                <p>{desc}</p>
+
             </div>
             <div className="price-container">
                 <p>{quantity}U</p>

@@ -11,20 +11,20 @@ import { useParams } from "react-router-dom";
 
 const Resumen = () => {
 
-    const [visitedOrder, setVisitedOrder] = useState(null);
-    const { currentUser } = useSelector(state => state.user)
-    const { orders } = useSelector(state => state.orders)
     const dispatch = useDispatch()
-    const { orderId } = useParams()
+    const { orderId } = useParams();
+
+    const [visitedOrder, setVisitedOrder] = useState(null);
+
+    const orders = useSelector(state => state.orders.orders)
+    const { currentUser } = useSelector(state => state.user)
 
     useEffect(() => {
         if (!orders) {
             getOrders(dispatch, currentUser)
         }
-        setVisitedOrder(orders?.find((order) => order._id === orderId))
-    }, [currentUser, dispatch, orderId, orders])
-
-    console.log(visitedOrder);
+        setVisitedOrder(orders?.find(order => order._id === orderId))
+    }, [orderId, currentUser, orders, dispatch])
 
     return (
 
@@ -37,7 +37,7 @@ const Resumen = () => {
             <div className="products-container">
                 {
                     visitedOrder?.items.map((item) => {
-                        return <CardResumen key={item._id} {...item} />
+                        return <CardResumen {...item} key={item._id} />
                     })
                 }
             </div>

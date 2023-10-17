@@ -49,37 +49,12 @@ function Navbar() {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     };
 
-    // Agrega una referencia para el contenedor del modal
-    const modalUserRef = useRef(null);
-
-    // Manejador de clics fuera del modal
-    const handleClickOutsideModal = (e) => {
-        if (modalUserRef.current && !modalUserRef.current.contains(e.target)) {
-            // Si se hace clic fuera del modal, cierra el modal
-            dispatch(toggleHiddenMenu());
-        }
-    };
-
-    useEffect(() => {
-        // Agrega un escucha de clics al cuerpo de la página
-        document.body.addEventListener("click", handleClickOutsideModal);
-
-        return () => {
-            // Limpia el escucha de clics al desmontar el componente
-            document.body.removeEventListener("click", handleClickOutsideModal);
-        };
-    }, []);
-
 
     return (
         <header className='header' ref={headerRef}>
             <div className="navbar-container">
                 <ModalCart />
-                {currentUser && (
-                    <div ref={modalUserRef}>
-                        <ModalUser />
-                    </div>
-                )}
+                <ModalUser />
                 <div className="logo">
                     <Link to="/" onClick={navigateToTop}>
                         <img src={logo2} alt='logo' />

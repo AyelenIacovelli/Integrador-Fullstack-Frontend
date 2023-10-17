@@ -38,7 +38,11 @@ const ModalUser = () => {
         dispatch(setCurrentUser(null));
         dispatch(toggleHiddenMenu());
         toast.success('Sesión cerrada');
-        navigate("/")
+        navigate("/");
+    };
+
+    const handleUsernameClick = () => {
+        dispatch(toggleHiddenMenu());
     };
 
     return (
@@ -52,7 +56,7 @@ const ModalUser = () => {
                     key='cart-user'
                     ref={modalRef}
                 >
-                    <h2 className='username'>{currentUser?.nombre}</h2>
+                    <h2 className='username' onClick={handleUsernameClick}>{currentUser?.nombre}</h2>
                     <Link to='/mis-ordenes'>Mis Ordenes</Link>
                     <span onClick={handleLogout}>Cerrar Sesion</span>
                 </motion.div>

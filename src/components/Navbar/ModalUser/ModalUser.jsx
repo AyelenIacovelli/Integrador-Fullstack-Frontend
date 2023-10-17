@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import "./modalUser.css"
 import { Link, useNavigate } from 'react-router-dom';
@@ -15,35 +15,13 @@ const ModalUser = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate()
 
-    const modalRef = useRef(null);
-
-    useEffect(() => {
-        const handleOutsideClick = (e) => {
-            if (modalRef.current && !modalRef.current.contains(e.target)) {
-                dispatch(toggleHiddenMenu());
-            }
-        };
-
-        if (!hiddenMenu) {
-            document.addEventListener('mousedown', handleOutsideClick);
-        }
-
-        return () => {
-            document.removeEventListener('mousedown', handleOutsideClick);
-        };
-
-    }, [dispatch, hiddenMenu]);
-
     const handleLogout = () => {
         dispatch(setCurrentUser(null));
         dispatch(toggleHiddenMenu());
         toast.success('Sesión cerrada');
-        navigate("/");
+        navigate("/")
     };
 
-    const handleUsernameClick = () => {
-        dispatch(toggleHiddenMenu());
-    };
 
     return (
         <AnimatePresence>
@@ -54,9 +32,8 @@ const ModalUser = () => {
                     exit={{ translateX: 600 }}
                     transition={{ duration: 0.5 }}
                     key='cart-user'
-                    ref={modalRef}
                 >
-                    <h2 className='username' onClick={handleUsernameClick}>{currentUser?.nombre}</h2>
+                    <h2 className='username'>{currentUser?.nombre}</h2>
                     <Link to='/mis-ordenes'>Mis Ordenes</Link>
                     <span onClick={handleLogout}>Cerrar Sesion</span>
                 </motion.div>

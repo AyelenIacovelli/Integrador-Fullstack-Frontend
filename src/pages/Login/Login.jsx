@@ -7,7 +7,7 @@ import { toast } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css";
 import CommonSection from '../../components/UI/common/CommonSection'
 import { loginUser } from '../../axios/axios-user'
-import { useDispatch, useSelector } from "react-redux"
+import { useDispatch } from "react-redux"
 import { setCurrentUser } from '../../redux/slices/userSlice'
 import LoginInput from '../../components/UI/LoginInput/LoginInput'
 // import useRedirect from '../../custom-hooks/useRedirect'
@@ -23,7 +23,7 @@ const Login = () => {
 
 
 
-    const currentUser = useSelector(state => state.user.current)
+    // const currentUser = useSelector(state => state.user.current)
     // useRedirect(currentUser?.verified ? "/" : "/validation")
 
     const validationSchema = Yup.object().shape({

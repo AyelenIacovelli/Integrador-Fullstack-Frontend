@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Link, useNavigate } from "react-router-dom";
 
-import { FaUserAlt, FaHeart, FaCheckCircle } from "react-icons/fa";
+import { FaUserAlt, FaHeart, FaBars, FaCheckCircle } from "react-icons/fa";
 // import { HiHome } from "react-icons/hi";
 
 import CartIcon from "./CartIcon/CartIcon";
@@ -26,6 +26,7 @@ function Navbar() {
     const favoriteProductsCount = favorites ? favorites.length : 0;
 
     const headerRef = useRef(null)
+    const menuRef = useRef(null)
 
 
 
@@ -49,6 +50,8 @@ function Navbar() {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     };
 
+    const menuToggle = () => menuRef.current.classList.toggle('active__menu')
+
 
     return (
         <header className='header' ref={headerRef}>
@@ -60,57 +63,55 @@ function Navbar() {
                         <img src={logo2} alt='logo' />
                     </Link>
                 </div>
-                <div className={"links-container"}>
-                    <motion.div whileTap={{ scale: 0.97 }}>
-                        <Link to="/">
-                            {/* <div>
-                            <HiHome />
-                        </div> */}
-                            Home
-                        </Link>
-                    </motion.div>
-                    <motion.div whileTap={{ scale: 0.97 }}>
-                        <Link to="/tienda">
-                            {/* <div>
-                            <FaShoppingCart />
-                        </div> */}
-                            Tienda
-                        </Link>
-                    </motion.div>
-                    <motion.div whileTap={{ scale: 0.97 }}>
-                        <Link to="/favoritos">
-                            <div>
-                                <FaHeart />
-                                <span className='badge'>{favoriteProductsCount}</span>
+                <div className="navigation" ref={menuRef} onClick={menuToggle}>
+                    <div className={"links-container"}>
+                        <motion.div whileTap={{ scale: 0.97 }}>
+                            <Link to="/">
+                                Home
+                            </Link>
+                        </motion.div>
+                        <motion.div whileTap={{ scale: 0.97 }}>
+                            <Link to="/tienda">
+                                Tienda
+                            </Link>
+                        </motion.div>
+                        <motion.div whileTap={{ scale: 0.97 }}>
+                            <Link to="/favoritos">
+                                <div>
+                                    <FaHeart />
+                                    <span className='badge'>{favoriteProductsCount}</span>
+                                </div>
+                            </Link>
+                        </motion.div>
+                        <div className="cart-nav">
+                            <CartIcon />
+                        </div>
+                        <div className="user-nav">
+                            <div className="link-container user-container" onClick={() => {
+                                currentUser ?
+                                    dispatch(toggleHiddenMenu()) :
+                                    navigate("/login")
+                            }}>
+                                <span className="span">
+                                    {
+                                        currentUser ?
+                                            <>
+                                                {currentUser.isVerified ? <FaCheckCircle /> : null}
+                                                {currentUser.nombre}
+                                            </> :
+                                            "Iniciar Sesión"
+                                    }
+                                </span>
+                                {currentUser ? null : <FaUserAlt />}
                             </div>
-                        </Link>
-                    </motion.div>
-
-                    <div className="cart-nav">
-                        <CartIcon />
-                    </div>
-
-                    <div className="user-nav">
-                        <div className="link-container user-container" onClick={() => {
-                            currentUser ?
-                                dispatch(toggleHiddenMenu()) :
-                                navigate("/login")
-                        }
-                        }
-                        >
-                            <span className="span">
-                                {
-                                    currentUser ?
-                                        <>
-                                            {currentUser.isVerified ? <FaCheckCircle /> : null}
-                                            {currentUser.nombre}
-                                        </> :
-                                        "Iniciar Sesión"
-                                }
-                            </span>
-                            {currentUser ? null : <FaUserAlt />}
                         </div>
                     </div>
+                </div>
+
+                <div className='mobile__menu'>
+                    <span onClick={menuToggle}>
+                        <FaBars />
+                    </span>
                 </div>
             </div>
         </header>

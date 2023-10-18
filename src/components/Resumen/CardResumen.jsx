@@ -17,9 +17,9 @@ const CardResumen = ({ img, title, desc, quantity, price, pricesale }) => {
                 <p>{desc}</p>
 
             </div>
-            <div className="price-container">
+            <div className="price-container-resumen">
                 <p>{quantity}U</p>
-                <span className="product-price">{formatPrice(totalPrice)}</span>
+                <span className="product-price-resumen">{formatPrice(totalPrice)}</span>
             </div>
         </div>
 

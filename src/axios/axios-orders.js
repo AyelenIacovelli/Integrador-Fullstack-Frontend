@@ -23,7 +23,6 @@ export const getOrders = async (dispatch, currentUser) => {
 
 export const createOrder = async (order, dispatch, currentUser) => {
     try {
-        console.log("Token JWT:", currentUser.token)
         const response = await axios.post(`${BASE_URL}orders`, order, {
             headers: {
                 'x-token': currentUser.token,

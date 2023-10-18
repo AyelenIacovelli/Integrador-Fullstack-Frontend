@@ -84,6 +84,7 @@
 .subtotal-check,
 .price-total-check {
     color: black;
+    display: flex;
 }
 
 .subtotal-check p {

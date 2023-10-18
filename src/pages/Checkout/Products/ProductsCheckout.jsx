@@ -28,7 +28,7 @@ const ProductsCheckout = ({ cartItems, shippingCost, price }) => {
             </div>
             <div className='price-container-check'>
                 <div className='subtotal-check'>
-                    <p>Subtotal</p>
+                    <p>Subtotal: </p>
                     <span>{formatPrice(price)}</span>
                 </div>
                 <div className='subtotal-check envio'>

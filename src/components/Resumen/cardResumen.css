@@ -21,18 +21,18 @@
     color: black;
 }
 
-.price-container {
+.price-container-resumen {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
 }
 
-.price-container p,
-.price-container span {
+.price-container-resumen p,
+.price-container-resumen span {
     color: black;
 }
 
-.product-price {
+.product-price-resumen {
     font-weight: 800;
     font-size: 2rem;
     background: orangered;

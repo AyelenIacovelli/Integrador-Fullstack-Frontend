@@ -21,7 +21,7 @@ root.render(
         <BrowserRouter>
           <ToastContainer
             theme='dark'
-            style={{ top: '70px', right: '0' }}
+            style={{ top: '100px', right: '0' }}
             autoClose={1500}
             closeOnClick
             pauseOnHover={false}

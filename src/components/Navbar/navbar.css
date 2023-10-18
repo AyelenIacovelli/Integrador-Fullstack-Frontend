@@ -329,3 +329,24 @@ header {
 
     text-decoration: underline;
 }
+
+/* MEDIAQUERIES */
+
+@media only screen and (max-width:768px) {
+
+    header {
+        height: 80px;
+        padding: 0 4px;
+    }
+
+    .navbar-container {
+        padding: unset;
+        justify-content: space-around;
+    }
+
+    .links-container {
+        font-size: 18px;
+        font-weight: 600;
+    }
+
+}

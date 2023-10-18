@@ -94,3 +94,39 @@
 .button:hover {
     color: #666;
 }
+
+/* MEDIAQUERIES */
+
+@media only screen and (max-width:576px) {
+
+    .cards-container {
+        flex-direction: column;
+    }
+
+    .card {
+        width: 100%;
+        height: unset;
+        padding: 10px;
+    }
+
+    .card-img-container {
+        width: 100%;
+        height: unset;
+    }
+
+    .card-img {
+        height: unset;
+    }
+
+    .card-title {
+        font-size: 25px;
+    }
+
+    .button {
+        font-size: 14px;
+    }
+
+    .price {
+        text-shadow: 1px 1px 2px black;
+    }
+}

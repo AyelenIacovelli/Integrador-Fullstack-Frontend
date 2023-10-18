@@ -27,7 +27,7 @@ export const Categoria = ({ img, title, category, isSelected }) => {
             whileTap={{ scale: 0.95 }}
         >
             <img src={img} alt={category} />
-            <h2>{title}</h2>
+            <h2 className="h2-categoria">{title}</h2>
         </motion.div>
     );
 };

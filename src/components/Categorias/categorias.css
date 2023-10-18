@@ -23,3 +23,18 @@
     color: gray;
     cursor: pointer;
 }
+
+@media only screen and (max-width:768px) {
+
+    .h2-categoria {
+        font-size: 16px;
+    }
+}
+
+@media only screen and (max-width:576px) {
+
+    .categorias-container {
+        overflow-x: scroll;
+        padding: 15px 5px;
+    }
+}

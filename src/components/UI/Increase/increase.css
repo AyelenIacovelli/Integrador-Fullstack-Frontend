@@ -10,6 +10,7 @@
     font-weight: 800;
     color: white;
     cursor: pointer;
+    background-color: black;
 
     &:disabled {
         opacity: 0.5;

@@ -12,6 +12,7 @@ import { setCurrentUser } from '../../redux/slices/userSlice'
 import LoginInput from '../../components/UI/LoginInput/LoginInput'
 // import useRedirect from '../../custom-hooks/useRedirect'
 import Submit from '../../components/UI/Submit/Submit'
+import * as Yup from 'yup';
 
 
 const Login = () => {
@@ -25,6 +26,11 @@ const Login = () => {
     const currentUser = useSelector(state => state.user.current)
     // useRedirect(currentUser?.verified ? "/" : "/validation")
 
+    const validationSchema = Yup.object().shape({
+        email: Yup.string().email('Ingrese un correo válido').required('El correo es requerido'),
+        password: Yup.string().min(6, 'La contraseña debe tener al menos 6 caracteres').required('La contraseña es requerida'),
+    });
+
     return (
         <Helmet title="Login">
             <CommonSection title="Iniciar sesión" />
@@ -37,6 +43,7 @@ const Login = () => {
                             email: '',
                             password: '',
                         }}
+                        validationSchema={validationSchema}
                         onSubmit={async (values) => {
                             try {
                                 const user = await loginUser(values.email, values.password);

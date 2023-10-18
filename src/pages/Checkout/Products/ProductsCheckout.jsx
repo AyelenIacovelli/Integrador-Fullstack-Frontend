@@ -20,7 +20,7 @@ const ProductsCheckout = ({ cartItems, shippingCost, price }) => {
 
                     )
                         : (
-                            <p>No seas amarrete, comprá algo</p>
+                            <p>Tu carrito se encuentra vacío</p>
                         )
                 }
 

@@ -180,6 +180,13 @@ header {
     gap: 7px;
 }
 
+.subtotal-btn {
+    display: flex;
+    flex-direction: column;
+    align-content: stretch;
+    margin-top: 5px;
+}
+
 .subtotal .btn-submit {
     margin-top: 5px;
 }

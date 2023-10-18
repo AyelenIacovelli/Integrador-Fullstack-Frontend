@@ -101,7 +101,7 @@ const ModalCart = () => {
                                 <p>Total:</p>
                                 <span className='price'>{formatPrice(totalPrice + shippingCost)}</span>
                             </div>
-                            <div className='subtotal'>
+                            <div className='subtotal-btn'>
                                 <Submit onClick={() => {
                                     navigate('/checkout');
                                     dispatch(toggleHiddenCart())

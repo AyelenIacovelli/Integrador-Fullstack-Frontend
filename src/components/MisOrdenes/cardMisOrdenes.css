@@ -10,7 +10,8 @@
 
 .pedido-container {
     background: var(--gray-bg);
-
+    border: 1px solid black;
+    box-shadow: 2px 2px 2px gray;
     border-radius: 15px;
     padding: 1rem 1.4rem;
     display: flex;
@@ -33,6 +34,7 @@
 .id {
     font-size: 1rem;
     color: #666;
+    font-weight: 600;
 }
 
 .link-tienda {

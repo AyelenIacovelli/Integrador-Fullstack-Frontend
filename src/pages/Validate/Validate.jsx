@@ -48,7 +48,7 @@ const Validate = () => {
                     :
                     (<div className='validation-container'>
                         <h1>Revisa tu mail y validá tu cuenta</h1>
-                        <p>Recuerda que no podrás realizar compras en tanto no esté la cuenta validada</p>
+                        <p className='validate-p'>Recuerda que no podrás realizar compras en tanto no esté la cuenta validada</p>
                         <Formik
                             initialValues={{
                                 code: ''

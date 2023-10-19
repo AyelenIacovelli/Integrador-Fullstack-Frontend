@@ -3,7 +3,7 @@ import Helmet from '../../components/Helmet/Helmet';
 import { Formik, Form } from 'formik';
 import LoginInput from '../../components/UI/LoginInput/LoginInput';
 import Submit from '../../components/UI/Submit/Submit';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import * as Yup from 'yup';
@@ -18,7 +18,6 @@ import './signup.css';
 
 const Signup = () => {
     const dispatch = useDispatch();
-    const navigate = useNavigate()
     const [loading, setLoading] = useState(false); // Estado para controlar el estado de carga
     useRedirect('/validation');
 
@@ -40,7 +39,6 @@ const Signup = () => {
                     ...user.usuario,
                 }));
                 toast.success('Usuario registrado');
-                navigate('/validation', { state: { username: user.usuario.username } });
             }
         } catch (error) {
             toast.error(error.message);

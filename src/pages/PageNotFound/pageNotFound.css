@@ -1,22 +1,36 @@
 .found-container {
     display: flex;
     justify-content: center;
-    align-items: center;
-    max-width: 1400px;
-    margin: 0 auto;
-    height: 60vh;
+    align-items: flex-end;
+    max-width: 1200px;
+    height: 100vh;
     gap: 5rem;
+    background-image: url(../../assets/images/mario5.jpg);
+    background-size: cover;
+    background-position: center;
+    margin-top: -100px;
+    padding-bottom: 30px;
 }
 
 .found-text {
     display: flex;
     flex-direction: column;
-    gap: 20px;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
+    padding-bottom: 15px;
+
 
     & h1 {
-        margin: 0;
+        color: red;
+    }
+
+    & h2 {
+        color: red;
+        padding-bottom: 20px;
+    }
+
+    & p {
+        margin-bottom: 28px;
     }
 }
 

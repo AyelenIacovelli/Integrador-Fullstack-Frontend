@@ -110,7 +110,7 @@ function Navbar() {
 
                 <div className='mobile__menu'>
                     <span onClick={menuToggle}>
-                        <FaBars />
+                        <FaBars className="menu-hamburguesa" />
                     </span>
                 </div>
             </div>

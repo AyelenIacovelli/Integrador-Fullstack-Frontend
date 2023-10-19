@@ -11,6 +11,7 @@ import * as Yup from 'yup';
 import Helmet from '../../components/Helmet/Helmet'
 import CommonSection from '../../components/UI/common/CommonSection'
 import "../Validation/validation.css"
+import { toast } from "react-toastify";
 
 const validationSchema = Yup.object().shape({
     code: Yup.string()
@@ -60,16 +61,19 @@ const Validate = () => {
                                     if (isCodeValid) {
                                         // Si el código es válido, actualiza el estado y navega a la página principal
                                         dispatch(setVerified());
+                                        toast.success('Cuenta verificada correctamente');
                                         navigate('/');
                                     } else {
                                         // Si el código no es válido, muestra un mensaje de error
                                         setError('El código ingresado no es válido');
                                         console.log(error);
+                                        toast.error('El código ingresado es incorrecto')
                                     }
                                 } catch (error) {
                                     // Manejo de errores de la solicitud a la base de datos
                                     console.error('Error al verificar el código:', error);
                                     setError('Error al verificar el código. Intente nuevamente más tarde.');
+                                    toast.error('Error en la verificación. Vuelva a intentar más tarde')
                                 }
                             }}
                         >

@@ -16,10 +16,10 @@ import { clearCart, toggleHiddenCart } from "../../../redux/slices/cartSlice";
 const ModalCart = () => {
     const hiddenCart = useSelector(state => state.cart.hidden)
     const { cartItems, shippingCost } = useSelector(state => state.cart);
+    const { currentUser } = useSelector((state) => state.user);
 
     const navigate = useNavigate();
     const dispatch = useDispatch();
-
 
     const totalPrice = cartItems.reduce((acc, item) => {
         const itemPrice = item.pricesale || item.price;
@@ -62,7 +62,6 @@ const ModalCart = () => {
                         <div className='main-container'>
                             <div className='title'>
                                 <h1>Mis Productos</h1>
-
                             </div>
 
                             <div className='products-wrapper'>
@@ -76,7 +75,6 @@ const ModalCart = () => {
                                     )
                                 }
                             </div>
-
                         </div>
                         <div className='trash-btn-container'>
                             <Increase
@@ -93,7 +91,7 @@ const ModalCart = () => {
                                 <span>{formatPrice(totalPrice)}</span>
                             </div>
                             <div className='subtotal'>
-                                <p>Envio</p>
+                                <p>Envío</p>
                                 <span>{formatPrice(shippingCost)}</span>
                             </div>
                             <hr />
@@ -102,10 +100,17 @@ const ModalCart = () => {
                                 <span className='price'>{formatPrice(totalPrice + shippingCost)}</span>
                             </div>
                             <div className='subtotal-btn'>
-                                <Submit onClick={() => {
-                                    navigate('/checkout');
-                                    dispatch(toggleHiddenCart())
-                                }}
+                                <Submit
+                                    onClick={() => {
+                                        if (currentUser?.verified) {
+                                            navigate('/checkout');
+                                        } else if (!currentUser) {
+                                            navigate('/login');
+                                        } else {
+                                            navigate('/validate')
+                                        }
+                                        dispatch(toggleHiddenCart());
+                                    }}
                                     disabled={!cartItems.length}
                                 >
                                     Iniciar pedido

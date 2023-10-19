@@ -9,7 +9,9 @@ const Loader = () => {
     // const rotate = useTransform(time, [0, 1200], [0, 360], { clamp: false });
 
     return (
-        <div class="loader"></div>
+        <div className='loader-container'>
+            <div class="loader"></div>
+        </div>
     );
 };
 

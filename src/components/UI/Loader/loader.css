@@ -1,3 +1,10 @@
+.loader-container {
+    display: flex;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
 .loader {
     width: 30px;
     height: 30px;
@@ -7,7 +14,11 @@
     border-right: 30px solid #FF5D00;
     border-radius: 50%;
     animation: spinIT 0.8s linear infinite;
-    filter: drop-shadow(0px 0px 8px gray)
+    filter: drop-shadow(0px 0px 8px gray);
+    display: flex;
+    position: absolute;
+    top: 0;
+    right: 0;
 }
 
 @keyframes spinIT {

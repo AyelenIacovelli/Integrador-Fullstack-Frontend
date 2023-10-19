@@ -1,0 +1,19 @@
+.validation-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    padding: 40px 5px 25px 5px;
+    gap: 30px;
+}
+
+.validation-h1 {
+    text-align: center;
+}
+
+.validation-btn-container {
+    display: flex;
+    gap: 8px;
+}

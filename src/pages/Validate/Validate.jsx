@@ -8,6 +8,9 @@ import Submit from "../../components/UI/Submit/Submit"
 import LoginInput from '../../components/UI/LoginInput/LoginInput'
 import Button from '../../components/UI/Button/Button'
 import * as Yup from 'yup';
+import Helmet from '../../components/Helmet/Helmet'
+import CommonSection from '../../components/UI/common/CommonSection'
+import "../Validation/validation.css"
 
 const validationSchema = Yup.object().shape({
     code: Yup.string()
@@ -31,7 +34,8 @@ const Validate = () => {
     // }, [currentUser, navigate]
 
     return (
-        <>
+        <Helmet title="Validate">
+            <CommonSection title="Verificación de Usuario" />
             {
                 currentUser?.verified ?
                     (<>
@@ -41,8 +45,8 @@ const Validate = () => {
                         }}>Volver al Home</Button>
                     </>)
                     :
-                    (<div className='validate-container'>
-                        <h1>Valida tu cuenta</h1>
+                    (<div className='validation-container'>
+                        <h1>Revisa tu mail y validá tu cuenta</h1>
                         <Formik
                             initialValues={{
                                 code: ''
@@ -69,15 +73,16 @@ const Validate = () => {
                                 }
                             }}
                         >
-                            <Form>
-                                <LoginInput name='code' type='code' placeholder='Ingrese su código' />
-                                <Submit>Validar</Submit>
+                            <Form className='validate-form'>
+                                <LoginInput name='code' type='code' placeholder='Ingrese aquí el código de verificación' />
+                                <Submit>Verificar</Submit>
                             </Form>
 
                         </Formik>
                     </div>)
             }
-        </>
+        </Helmet>
+
 
     )
 }

@@ -34,7 +34,9 @@
 @media only screen and (max-width:576px) {
 
     .categorias-container {
-        overflow-x: scroll;
+        flex-wrap: wrap;
         padding: 15px 5px;
+        justify-content: space-evenly;
+        gap: 10px;
     }
 }

@@ -36,7 +36,7 @@ export const products = [
         id: 4,
         title: 'Mickey Mouse',
         img: 'https://res.cloudinary.com/dnfwabuyr/image/upload/v1686755219/Buzos/mickey_frente_xndxe5.webp',
-        img2: 'https://res.cloudinary.com/dnfwabuyr/image/upload/v1686755219/Buzos/konoha_frente_euj7eq.webp',
+        img2: 'https://res.cloudinary.com/dnfwabuyr/image/upload/v1686755219/Buzos/mickey_espalda_mh6nsz.webp',
         desc: 'Buzo Mickey Mouse',
         desc2: 'Buzo con capucha con diseño sublimado. Confeccionado 100% en algodón con doble frisa ideal para el otroño/invierno.',
         price: 13000,

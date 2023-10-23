@@ -88,11 +88,12 @@
     font-size: 16px;
     font-weight: 600;
     padding: 6px 14px;
-    border-radius: 16px;
+    border-radius: 10px;
+    background-color: beige;
 }
 
 .button:hover {
-    color: #666;
+    background-color: bisque;
 }
 
 /* MEDIAQUERIES */

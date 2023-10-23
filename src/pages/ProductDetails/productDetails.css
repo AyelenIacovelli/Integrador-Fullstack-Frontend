@@ -79,7 +79,8 @@ h2 {
 
 .details-shop-btn:hover {
     text-decoration: underline;
-    color: green;
+    color: violet;
+    font-weight: 600;
 }
 
 

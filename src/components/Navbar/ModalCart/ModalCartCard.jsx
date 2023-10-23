@@ -38,8 +38,8 @@ const ModalCartCard = ({ img, title, desc, price, quantity, id, pricesale }) => 
             />
             <div className='text-container'>
                 <h3 className='card-title-h3'>{title}</h3>
-                <p className='text'>{desc}</p>
-                <span className="price">
+                <p className='text modalcart-p'>{desc}</p>
+                <span className="price modalcart-span">
                     <span className={`price-original ${isPriceSale ? 'strikethrough' : ''}`}>${price}</span>
                     {isPriceSale && <span className="price-sale">${pricesale}</span>}
                 </span>
@@ -54,7 +54,7 @@ const ModalCartCard = ({ img, title, desc, price, quantity, id, pricesale }) => 
                 </Increase>
                 <Count>{quantity}</Count>
                 <Increase onClick={() => dispatch(addToCart({ img, title, desc, price, quantity, id, pricesale }))}>
-                    <BsPlusLg className='plus' />
+                    <BsPlusLg />
                 </Increase>
             </div>
         </div>

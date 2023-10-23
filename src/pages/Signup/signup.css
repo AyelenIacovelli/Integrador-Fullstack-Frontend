@@ -70,13 +70,10 @@ p a {
 
 .login-input.is-error {
     border-color: red;
-    /* Cambia el color del borde cuando hay errores */
-    /* Otros estilos de error que desees agregar */
 }
 
 .error-message {
     color: red;
-    /* Cambia el color del mensaje de error */
 }
 
 
@@ -113,7 +110,7 @@ p a {
     }
 
     .form__group input {
-        width: 285px;
+        width: 270px;
         font-size: 11px;
     }
 

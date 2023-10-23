@@ -10,7 +10,7 @@ const CardResumen = ({ title, desc, quantity, price, pricesale }) => {
     return (
 
         <div className="product">
-            <div className="product-left">
+            <div className="product-left left-resumen">
 
                 <h3>{title}</h3>
                 <p>{desc}</p>

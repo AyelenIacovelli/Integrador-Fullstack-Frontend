@@ -36,8 +36,8 @@ const Resumen = () => {
                     <h1>Orden: #{visitedOrder?._id.slice(0, 7)}</h1>
                     <Link borderRadius="20" to="/mis-ordenes"><span className="mis-ordenes">Mis ordenes</span></Link>
                 </div>
-                <h2>Productos:</h2>
-                <div className="products-container">
+                <h2 className="resumen-h2">Productos:</h2>
+                <div className="products-container prod-resumen">
                     {
                         visitedOrder?.items.map((item) => {
                             return <CardResumen {...item} key={item._id} />

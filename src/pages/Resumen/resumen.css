@@ -16,14 +16,17 @@
 
 .prod-resumen {
     gap: unset;
+    justify-content: center;
 }
 
 .left-resumen {
-    gap: 20px;
+    gap: unset;
+    align-items: center;
 }
 
 .resumen-h2 {
     margin-top: 40px;
+    text-align: center;
 }
 
 .mis-ordenes {

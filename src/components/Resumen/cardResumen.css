@@ -35,12 +35,17 @@
 .product-price-resumen {
     font-weight: 800;
     font-size: 2rem;
-
 }
 
 @media only screen and (max-width: 576px) {
 
     .product-price-resumen {
         font-size: 21px;
+    }
+
+    .product {
+        width: 100%;
+        padding: 5px;
+        gap: 10px;
     }
 }

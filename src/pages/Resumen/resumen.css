@@ -88,4 +88,8 @@
         padding: unset;
         justify-content: space-between;
     }
+
+    .left-resumen {
+        justify-content: flex-end;
+    }
 }

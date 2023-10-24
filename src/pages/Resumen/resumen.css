@@ -23,6 +23,7 @@
     gap: unset;
     flex-direction: column;
     align-items: center;
+    justify-content: flex-end;
 }
 
 .resumen-h2 {
@@ -49,12 +50,15 @@
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+    border-top: 1px solid black;
+    padding-top: 10px;
 }
 
 .costo-producto {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 50px;
 }
 
 .envio {
@@ -89,7 +93,7 @@
         justify-content: space-between;
     }
 
-    .left-resumen {
-        justify-content: flex-end;
+    .resumen-container-info {
+        width: 100%;
     }
 }

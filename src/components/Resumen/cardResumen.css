@@ -4,8 +4,9 @@
     background: var(--gray-bg);
     border-radius: 15px;
     padding: 1.5rem 1rem;
-    width: 90%;
+    width: 100%;
     max-width: 620px;
+    gap: 25px;
 }
 
 .product-left {
@@ -44,8 +45,7 @@
     }
 
     .product {
-        width: 100%;
-        padding: 5px;
+        padding: 15px 0 5px 0;
         gap: 10px;
     }
 }

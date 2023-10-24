@@ -49,7 +49,7 @@
 
 .username {
     font-weight: 400;
-    margin-bottom: 10px;
+    margin-bottom: 18px;
 }
 
 .username span {
@@ -62,8 +62,8 @@
     z-index: 97;
 }
 
-.link-ordenes-user {
-    margin: 12px 0 8px 0;
+.user-span {
+    margin-top: 10px;
 }
 
 @media only screen and (max-width: 576px) {

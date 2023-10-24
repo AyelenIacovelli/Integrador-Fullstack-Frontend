@@ -16,7 +16,6 @@
 .hero__section-titles {
     display: flex;
     flex-direction: column;
-    width: 639px;
     height: 50%;
     justify-content: flex-end;
     padding-bottom: 35px;
@@ -28,8 +27,8 @@
     text-align: center;
     font-size: 60px;
     font-weight: 900;
-    letter-spacing: 3px;
-    text-shadow: 4px -3px 4px rgba(0, 0, 0, 0.67);
+    letter-spacing: 8px;
+    text-shadow: -4px 3px 1px rgba(0, 0, 0, 0.67);
 }
 
 .hero__section-titles h2 {
@@ -44,7 +43,7 @@
 .best_sales-title {
     color: white;
     text-shadow: 4px 2px 3px rgba(187, 114, 38, 0.95);
-    font-size: 50px;
+    font-size: 70px;
 }
 
 .trending__products-title-container,
@@ -205,11 +204,12 @@
     }
 
     .hero__section-titles {
-        width: 495px;
+        height: 60%;
     }
 
     .hero__section-titles h1 {
         font-size: 50px;
+        letter-spacing: 4px;
     }
 
     .hero__section-titles h2 {
@@ -248,11 +248,11 @@
     }
 
     .hero__section-titles {
-        width: 353px;
+        height: 50%;
     }
 
     .hero__section-titles h1 {
-        font-size: 35px;
+        font-size: 50px;
     }
 
     .hero__section-titles h2 {
@@ -309,17 +309,17 @@
     }
 
     .hero__section h1 {
-        font-size: 22px;
+        font-size: 28px;
+        letter-spacing: 2px;
     }
 
     .hero__section-titles {
-        width: 237px;
         padding-bottom: 10px;
+        height: 50%;
     }
 
     .hero__section-titles h2 {
-        font-size: 12px;
-        margin-top: -5px;
+        display: none;
     }
 
     .hero__content {

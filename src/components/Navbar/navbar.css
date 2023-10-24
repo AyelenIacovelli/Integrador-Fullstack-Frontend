@@ -300,6 +300,10 @@ header {
         gap: 28px;
     }
 
+    .subtotal {
+        padding: 0 6px;
+    }
+
 }
 
 @media only screen and (max-width: 576px) {

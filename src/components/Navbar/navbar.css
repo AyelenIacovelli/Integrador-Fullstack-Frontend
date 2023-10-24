@@ -290,7 +290,8 @@ header {
 
     .navbar-container {
         padding: unset;
-        justify-content: space-around;
+        justify-content: space-between;
+        padding: 0 10px 0 10px;
     }
 
     .links-container {

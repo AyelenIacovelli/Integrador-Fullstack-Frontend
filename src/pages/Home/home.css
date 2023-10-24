@@ -55,7 +55,7 @@
     height: 506px;
     display: flex;
     justify-content: center;
-    align-items: center;
+    padding-top: 30px;
     box-shadow: -1px 9px 20px -4px rgba(0, 0, 0, 0.75);
 }
 
@@ -273,7 +273,7 @@
 
     .trending__products-title,
     .best_sales-title {
-        font-size: 42px;
+        font-size: 40px;
     }
 
     /* TIMER */
@@ -351,12 +351,13 @@
 
     .trending__products-title,
     .best_sales-title {
-        font-size: 30px;
+        font-size: 35px;
     }
 
     .trending__products-title-container,
     .sales-title-container {
         height: 252px;
+        padding-top: 10px;
     }
 
     .swipe {

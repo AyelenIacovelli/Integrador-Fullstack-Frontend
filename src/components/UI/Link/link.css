@@ -2,7 +2,6 @@
     padding: 0.8rem 1.5rem;
     outline: none;
     border: none;
-
     background: violet;
     text-transform: uppercase;
     font-weight: 400;
@@ -14,5 +13,13 @@
     font-size: 1rem;
 
     color: white;
+
+}
+
+@media only screen and (max-width: 576px) {
+
+    .link {
+        padding: 10px 12px;
+    }
 
 }

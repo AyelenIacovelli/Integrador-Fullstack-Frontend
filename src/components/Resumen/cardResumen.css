@@ -35,6 +35,12 @@
 .product-price-resumen {
     font-weight: 800;
     font-size: 2rem;
-    background: orangered;
 
+}
+
+@media only screen and (max-width: 576px) {
+
+    .product-price-resumen {
+        font-size: 21px;
+    }
 }

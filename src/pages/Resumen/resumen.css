@@ -21,6 +21,7 @@
 
 .left-resumen {
     gap: unset;
+    flex-direction: column;
     align-items: center;
 }
 
@@ -71,4 +72,20 @@
 
 .costo-producto p {
     color: black;
+}
+
+@media only screen and (max-width: 576px) {
+
+    .resumen-title {
+        gap: 12px;
+
+        & h1 {
+            font-size: 30px;
+        }
+    }
+
+    .prod-resumen {
+        padding: unset;
+        justify-content: space-between;
+    }
 }

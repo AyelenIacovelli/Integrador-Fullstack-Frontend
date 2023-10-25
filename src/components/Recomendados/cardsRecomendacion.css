@@ -109,6 +109,10 @@
         width: 298px;
         height: 298px;
     }
+
+    .price {
+        font-size: 18px;
+    }
 }
 
 @media only screen and (max-width:768px) {
@@ -123,7 +127,6 @@
         width: 380px;
         height: 380px;
     }
-
 }
 
 @media only screen and (max-width:576px) {

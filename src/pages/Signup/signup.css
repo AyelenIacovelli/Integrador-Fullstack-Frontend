@@ -130,6 +130,10 @@ p a {
     .error-message {
         font-size: 12px;
     }
+
+    .login-title {
+        font-size: 30px;
+    }
 }
 
 .custom-toast {

@@ -4,13 +4,13 @@
     justify-content: center;
     border: none;
     border-radius: 5px;
-    font-size: 15px;
-    font-weight: 800;
+    font-size: 18px;
+    /* font-weight: 800; */
     color: white;
     cursor: pointer;
     background-color: black;
-    width: 25px;
-    height: 25px;
+    width: 28px;
+    height: 28px;
 
     &:disabled {
         opacity: 0.5;

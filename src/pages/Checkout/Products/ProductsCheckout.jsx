@@ -17,14 +17,11 @@ const ProductsCheckout = ({ cartItems, shippingCost, price }) => {
                         cartItems.map((item) => {
                             return <CardProductCheckout {...item} key={item.id} />
                         })
-
                     )
                         : (
                             <p>Tu carrito se encuentra vacío</p>
                         )
                 }
-
-
             </div>
             <div className='price-container-check'>
                 <div className='subtotal-check'>

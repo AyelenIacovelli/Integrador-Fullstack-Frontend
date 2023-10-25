@@ -52,16 +52,7 @@ const Favoritos = () => {
                 </div>
                 <button onClick={handleClearFavorites} className='fav__btn' disabled={isButtonDisabled}>Borrar todos los Favoritos <FaHeart className='fav__btn-icon' /></button>
             </section>
-
-
-
-
-
-
-
-
         </Helmet>
-
     );
 }
 

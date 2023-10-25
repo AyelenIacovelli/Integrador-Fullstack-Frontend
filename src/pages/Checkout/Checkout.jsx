@@ -1,5 +1,4 @@
 import React from 'react';
-
 import CheckoutForm from '../Checkout/Form/CheckoutForm';
 import ProductsCheckout from '../Checkout/Products/ProductsCheckout';
 import Helmet from "../../components/Helmet/Helmet"

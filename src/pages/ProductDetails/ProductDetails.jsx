@@ -6,19 +6,12 @@ import CommonSection from "../../components/UI/common/CommonSection"
 import "../../data/Products";
 import "../ProductDetails/productDetails.css"
 import { motion } from 'framer-motion'
-import { useDispatch } from 'react-redux'
-import { toast } from 'react-toastify'
-import Button from '../../components/UI/Button/Button'
-import { addToCart } from '../../redux/slices/cartSlice'
 
 const ProductDetails = () => {
 
     const navigateToTop = () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     };
-
-
-    const dispatch = useDispatch()
 
     const { id } = useParams()
     const product = products.find((item) => item.id === Number(id))
@@ -29,10 +22,6 @@ const ProductDetails = () => {
 
     const { title, img, desc, desc2, price, pricesale, img2, img3, img4, img5 } = product;
 
-    const handleAddToCart = () => {
-        dispatch(addToCart({ id, title, img, price, pricesale }));
-        toast.success('Se agregó correctamente el producto al carrito');
-    };
     return (
         <Helmet title={title}>
             <CommonSection title="Detalles del producto" />
@@ -51,7 +40,6 @@ const ProductDetails = () => {
                             {pricesale ? <span className='price-span'>${pricesale}</span> : <span className='price-span'>${price}</span>}
                             <p className='details-desc'>{desc}</p>
                             <p className='details-p'>{desc2}</p>
-                            <Button onClick={handleAddToCart}>Agregar al carrito</Button>
                             <motion.button whileTap={{ scale: 1.2 }} className='details-shop-btn' onClick={navigateToTop}><Link to="/tienda">Volver a la tienda</Link></motion.button>
                         </div>
                     </div>

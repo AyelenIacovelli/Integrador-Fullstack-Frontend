@@ -264,6 +264,19 @@ h6 span {
         width: 100%;
     }
 
+    .checkout-datos {
+        width: 100%;
+    }
+
+    .input-box input {
+        width: 100%;
+        padding: 5px 2px;
+    }
+
+    .form-check {
+        padding: 0 15px;
+    }
+
     .buys__container-cart h4 {
         font-size: 16px;
     }

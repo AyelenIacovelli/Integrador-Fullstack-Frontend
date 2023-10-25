@@ -1,13 +1,6 @@
 /* google fonts */
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap");
 
-/*  css variables */
-/* :root { */
-/* --card-bg-01: #fdefe6; */
-
-/* } */
-
-/* reset browser default */
 * {
   margin: 0;
   padding: 0;
@@ -35,5 +28,4 @@ a {
 
 .section__title {
   color: #0a1d37;
-  /* font-weight: 600; */
 }

@@ -1,10 +1,8 @@
 import React, { useEffect } from 'react'
 import "./home.css"
 import { Link, useNavigate } from "react-router-dom"
-// import { products } from "../../data/Products"
 import Helmet from '../../components/Helmet/Helmet'
 import Services from '../../services/Services'
-// import ProductsList from '../../components/UI/products/ProductsList'
 import Clock from "../../components/UI/clock/Clock"
 import ofertaok from "../../assets/images/ofertaok.png"
 import { motion, useAnimation } from 'framer-motion';
@@ -35,27 +33,14 @@ const Home = () => {
         controlsY.start({ y: 0 });
     }, [controlsY]);
 
-
-    // const productsRef = useRef();
-
-    // const doScroll = () => {    
-    //   window.scrollTo(
-    //     productsRef.current.getBoundingClientRect().x,
-    //     productsRef.current.getBoundingClientRect().y - 25
-    //   )
-    // }
-
     const navigate = useNavigate()
     const currentUser = useSelector(state => state.user.currentUser)
-
 
     useEffect(() => {
         if (!currentUser) {
             navigateToTop('/login')
         }
     }, [currentUser, navigate])
-
-
 
     return (
         // HELMET

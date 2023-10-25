@@ -7,8 +7,6 @@ import "./categorias.css"
 
 export const Categoria = ({ img, title, category, isSelected }) => {
 
-    // const { selectedCategory } = useSelector((state) => state.categories)
-
     const dispatch = useDispatch();
 
     const handleCategoryClick = () => {
@@ -18,7 +16,6 @@ export const Categoria = ({ img, title, category, isSelected }) => {
             dispatch(selectCategory(category));
         }
     };
-
 
     return (
         <motion.div

@@ -1,9 +1,7 @@
 import React, { useRef } from 'react'
 import CommonSection from '../../components/UI/common/CommonSection'
 import Helmet from "../../components/Helmet/Helmet"
-// import { FaSearch } from "react-icons/fa"
 import "../Tienda/tienda.css"
-// import { products } from "../../data/Products"
 import ProductsList from "../../components/UI/products/ProductsList"
 import Categorias from "../../components/Categorias/Categorias"
 
@@ -19,7 +17,6 @@ const Tienda = () => {
           <Categorias />
         </div>
       </section>
-
       <section className="products__section">
         <div className="products__container">
           <ProductsList />

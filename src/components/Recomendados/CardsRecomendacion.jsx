@@ -1,8 +1,5 @@
 import React from 'react';
-
 import CardRecomendacion from './CardRecomendacion';
-
-
 import { useSelector } from 'react-redux';
 
 const CardsRecomendacion = () => {

@@ -5,7 +5,6 @@ const LoginInput = ({ type, placeholder, name }) => {
     return (
 
         <Field name={name}>
-
             {
                 ({ field, form: { errors, touched } }) => (
                     <div className="form__group">
@@ -20,15 +19,10 @@ const LoginInput = ({ type, placeholder, name }) => {
                         <ErrorMessage name={field.name}>
                             {message => <p className="error-message">{message}</p>}
                         </ErrorMessage>
-
                     </div>
                 )
             }
-
-
         </Field>
-
-
     );
 };
 

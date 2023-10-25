@@ -11,7 +11,6 @@ const ProductsCheckout = ({ cartItems, shippingCost, price }) => {
         <div className='productos-container-checkout'>
             <h2 className='products-title-check'>Tu pedido</h2>
             <div className='cards-wrapper'>
-
                 {
                     cartItems.length ? (
                         cartItems.map((item) => {

@@ -1,10 +1,6 @@
 import React from 'react'
-
 import Button from '../Button/Button';
-
-
 import "./productCard.css"
-// import { Products } from '../../data/Products';
 import { useSelector } from "react-redux"
 import { useEffect, useState } from 'react';
 import { INITIAL_LIMIT } from '../../../utils/constants';
@@ -18,8 +14,6 @@ const ProductsList = () => {
     const { selectedCategory } = useSelector((state) => state.categories)
 
     const totalProducts = useSelector((state) => state.products.totalProducts)
-
-    // console.log(products);
 
     if (selectedCategory) {
         products = { [selectedCategory]: products[selectedCategory] }
@@ -42,7 +36,6 @@ const ProductsList = () => {
                         })
                     })
                 }
-
             </div>
 
             {
@@ -64,7 +57,6 @@ const ProductsList = () => {
                     </div>
                 )
             }
-
         </>
     );
 };

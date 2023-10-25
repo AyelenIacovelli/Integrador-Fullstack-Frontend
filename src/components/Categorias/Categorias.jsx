@@ -1,5 +1,4 @@
 import { useSelector } from "react-redux";
-// import { Categories } from "../../data/Categories";
 import Categoria from "./Categoria";
 import "./categorias.css"
 
@@ -7,8 +6,6 @@ import "./categorias.css"
 const Categorias = () => {
 
     const { categories, selectedCategory } = useSelector((state) => state.categories);
-
-    // console.log(categories);
 
     return (
         <div className="categorias-container">
@@ -18,8 +15,6 @@ const Categorias = () => {
                 );
             })}
         </div>
-
-
     );
 };
 

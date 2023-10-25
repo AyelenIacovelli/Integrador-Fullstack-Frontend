@@ -24,16 +24,6 @@ const Validate = () => {
     const currentUser = useSelector(state => state.user.currentUser)
     const [error, setError] = useState(null);
 
-    // useEffect(() => {
-    //     if (!currentUser) {
-    //         navigate('/login')
-    //     } else if (currentUser.verified) {
-    //         navigate('/')
-    //     } else if (!currentUser.verified) {
-    //         navigate('/validation')
-    //     }
-    // }, [currentUser, navigate]
-
     return (
         <Helmet title="Validate">
             <CommonSection title="Verificación de Usuario" />
@@ -82,13 +72,10 @@ const Validate = () => {
                                 <LoginInput name='code' type='code' placeholder='Ingrese aquí el código de verificación' />
                                 <Submit>Verificar</Submit>
                             </Form>
-
                         </Formik>
                     </div>)
             }
         </Helmet>
-
-
     )
 }
 

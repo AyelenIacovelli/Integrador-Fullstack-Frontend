@@ -1,18 +1,13 @@
 import { motion } from "framer-motion";
 import { Link, useNavigate } from "react-router-dom";
-
 import { FaUserAlt, FaHeart, FaBars, FaCheckCircle } from "react-icons/fa";
-// import { HiHome } from "react-icons/hi";
-
 import CartIcon from "./CartIcon/CartIcon";
 import ModalCart from "./ModalCart/ModalCart";
 import ModalUser from "./ModalUser/ModalUser";
 import "./navbar.css"
 import { useDispatch, useSelector } from "react-redux";
 import { toggleHiddenMenu } from "../../redux/slices/userSlice";
-
 import logo2 from "../../assets/images/logogg.png"
-
 import { useEffect, useRef } from "react";
 
 
@@ -27,8 +22,6 @@ function Navbar() {
 
     const headerRef = useRef(null)
     const menuRef = useRef(null)
-
-
 
     const stickyHeaderFunc = () => {
         if (window.scrollY > 100) {

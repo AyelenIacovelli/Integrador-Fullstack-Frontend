@@ -1,16 +1,11 @@
 import React from 'react';
-// import { formatPrice } from '../../utils/index';
 import "../UI/products/productCard.css"
-
 import Button from '../UI/Button/Button';
-
 import "./cardsRecomendacion.css"
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../../redux/slices/cartSlice';
 import { Link } from 'react-router-dom'
-
 import { toast } from 'react-toastify'
-
 import { AiTwotoneFire } from "react-icons/ai"
 
 const CardRecomendacion = ({ title, img, price, desc, id, pricesale }) => {
@@ -37,7 +32,6 @@ const CardRecomendacion = ({ title, img, price, desc, id, pricesale }) => {
                         className='card-img'
                     />
                 </div>
-
                 <div className='card-text'>
                     <h2 className='card-title'>{title}</h2>
                     <p className='info-price'>{desc}</p>

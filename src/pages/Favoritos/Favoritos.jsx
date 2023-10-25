@@ -1,8 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-// import { toggleFavorite } from '../../redux/slices/favsSlice';
 import ProductCard from "../../components/UI/products/ProductCard"
-// import ProductsList from '../../components/UI/products/ProductsList';
 import { products } from '../../data/Products';
 import { createSelector } from 'reselect';
 import Helmet from "../../components/Helmet/Helmet"
@@ -10,7 +8,6 @@ import CommonSection from "../../components/UI/common/CommonSection"
 import { clearFavorites } from '../../redux/slices/favsSlice';
 import { FaHeart } from "react-icons/fa"
 import "./favoritos.css"
-
 
 const getFavorites = (state) => state.favs.favorites ?? [];
 
@@ -39,7 +36,6 @@ const Favoritos = () => {
     return (
         <Helmet title="Favoritos">
             <CommonSection title="Favoritos" />
-
             <section className='favoritos__section'>
                 <div className='favoritos__container'>
                     {favoriteProducts.length === 0 ? (

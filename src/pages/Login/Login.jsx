@@ -56,7 +56,6 @@ const Login = () => {
         <Helmet title="Login">
             <CommonSection title="Iniciar sesión" />
             <section className="signup__section">
-
                 <div className="form__container">
                     <h3 className='login-title'>Login</h3>
                     <Formik
@@ -82,7 +81,6 @@ const Login = () => {
                         </Form>
                     </Formik>
                 </div>
-
                 {loading && <Loader />} {/* Mostrar Loader si el estado de carga está activo */}
             </section>
         </Helmet>

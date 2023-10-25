@@ -22,7 +22,7 @@
 .left-resumen {
     gap: unset;
     flex-direction: column;
-    align-items: center;
+    align-items: start;
     justify-content: flex-end;
 }
 

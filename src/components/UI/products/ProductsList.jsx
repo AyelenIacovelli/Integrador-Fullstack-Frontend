@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react';
 import { INITIAL_LIMIT } from '../../../utils/constants';
 import ProductCard from './ProductCard';
 
-const ProductsList = () => {
+const ProductsList = ({ searchTerm }) => {
     const [limit, setLimit] = useState(INITIAL_LIMIT)
 
     let products = useSelector((state) => state.products.products)
@@ -23,27 +23,35 @@ const ProductsList = () => {
         setLimit(INITIAL_LIMIT)
     }, [selectedCategory])
 
+    const filteredProducts = Object.entries(products)
+        .map(([, items]) =>
+            items
+                .filter((item) =>
+                    searchTerm
+                        ? item.desc.toLowerCase().includes(searchTerm.toLowerCase())
+                        : true
+                )
+                .map((item) => {
+                    if (limit >= item.id || selectedCategory || searchTerm) {
+                        return <ProductCard {...item} key={item.id} />;
+                    }
+                    return null;
+                })
+        );
+
+    if (filteredProducts.every((products) => products.length === 0)) {
+        return <div>No hay productos con ese nombre.</div>;
+    }
+
     return (
         <>
-            <div className='productos-container'>
-                {
-                    Object.entries(products).map(([, items]) => {
-                        return items.map((item) => {
-                            if (limit >= item.id || selectedCategory) {
-                                return <ProductCard {...item} key={item.id} />
-                            }
-                            return null
-                        })
-                    })
-                }
-            </div>
+            <div className="productos-container">{filteredProducts}</div>
 
             {
-                !selectedCategory && (
-                    <div className='button-container'>
+                (!selectedCategory && !searchTerm) && (
+                    <div className="button-container">
                         <Button
                             onClick={() => setLimit((prevLimit) => prevLimit - INITIAL_LIMIT)}
-
                             disabled={INITIAL_LIMIT === limit}
                         >
                             <span>Ver menos</span>

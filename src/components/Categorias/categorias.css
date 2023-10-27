@@ -2,12 +2,13 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
-    width: 100%;
+    width: 75%;
 }
 
 .card-categoria {
     display: flex;
     align-items: center;
+    padding: 7px;
 
     & img {
         width: 30px;
@@ -28,6 +29,14 @@
 
     .h2-categoria {
         font-size: 16px;
+    }
+
+    .categorias-container {
+        width: 100%;
+    }
+
+    .card-categoria {
+        padding: 5px;
     }
 }
 

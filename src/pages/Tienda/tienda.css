@@ -8,9 +8,10 @@
 
 .shop__container {
     display: flex;
-    gap: 5px;
     max-width: 1200px;
     width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
 .filter__widget select {
@@ -83,6 +84,17 @@
     border-radius: 5px;
 }
 
+.input-search {
+    padding: 6px 8px;
+    width: 100%;
+}
+
+.search-container {
+    width: 20%;
+    display: flex;
+    align-items: center;
+}
+
 
 /* MEDIAQUERIES */
 
@@ -90,5 +102,19 @@
 
     .shop__section {
         margin: 15px 0 30px 0;
+    }
+
+    .shop__container {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .search-container {
+        width: unset;
+    }
+
+    .input-search {
+        width: unset;
     }
 }

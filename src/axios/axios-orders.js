@@ -18,6 +18,7 @@ export const getOrders = async (dispatch, currentUser) => {
         dispatch(fetchOrdersFail(
             "Algo salió mal. No hay órdenes registradas. Por favor iniciá sesión"
         ))
+        return
     }
 }
 

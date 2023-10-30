@@ -50,7 +50,13 @@ const ModalUser = () => {
                             </motion.button>
                         </div>
                         <h2 className='username'>{currentUser?.nombre}</h2>
-                        <Link to='/mis-ordenes' onClick={() => dispatch(toggleHiddenMenu())}>Mis Ordenes</Link>
+                        {currentUser.verified ? (
+                            <Link to='/mis-ordenes' onClick={() => dispatch(toggleHiddenMenu())}>
+                                Mis Ordenes
+                            </Link>
+                        ) : (
+                            <span className='user-span'>Mis Ordenes</span>
+                        )}
                         <span className='user-span' onClick={handleLogout}>Cerrar Sesion</span>
                     </motion.div>
                 )}

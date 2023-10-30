@@ -62,6 +62,7 @@
 
 .user-span {
     margin-top: 10px;
+    cursor: not-allowed;
 }
 
 @media only screen and (max-width: 576px) {

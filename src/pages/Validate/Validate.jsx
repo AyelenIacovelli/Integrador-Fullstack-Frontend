@@ -32,7 +32,7 @@ const Validate = () => {
                     (<>
                         <h1>¡Tu cuenta ya fue verificada!</h1>
                         <Button onClick={() => {
-                            navigate('/')
+                            navigate('/login')
                         }}>Volver al Home</Button>
                     </>)
                     :

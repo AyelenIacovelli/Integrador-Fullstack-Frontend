@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Helmet from "../../components/Helmet/Helmet";
 import { Form, Formik } from "formik";
 import { Link, useNavigate } from "react-router-dom";
@@ -12,7 +12,7 @@ import { setCurrentUser } from '../../redux/slices/userSlice';
 import LoginInput from '../../components/UI/LoginInput/LoginInput';
 import Submit from '../../components/UI/Submit/Submit';
 import * as Yup from 'yup';
-import Loader from "../../components/UI/Loader/Loader"
+import Loader from "../../components/UI/Loader/Loader";
 
 const Login = () => {
     const [loading, setLoading] = useState(false); // Estado para controlar el estado de carga
@@ -51,6 +51,11 @@ const Login = () => {
             setLoading(false); // Desactiva el estado de carga después de la autenticación
         }
     };
+
+    useEffect(() => {
+        // Cerrar la sesión al cargar la página de inicio de sesión
+        dispatch(setCurrentUser(null));
+    }, [dispatch]);
 
     return (
         <Helmet title="Login">

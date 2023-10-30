@@ -55,7 +55,7 @@ const ModalUser = () => {
                                 Mis Ordenes
                             </Link>
                         ) : (
-                            <span className='user-span'>Mis Ordenes</span>
+                            <span className='not-orders-span'>Mis Ordenes</span>
                         )}
                         <span className='user-span' onClick={handleLogout}>Cerrar Sesion</span>
                     </motion.div>

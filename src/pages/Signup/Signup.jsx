@@ -63,7 +63,7 @@ const Signup = () => {
                         onSubmit={handleSignup}
                     >
                         <Form className="auth__form">
-                            <LoginInput name="username" type="text" placeholder="Nombre" />
+                            <LoginInput name="username" type="text" placeholder="Usuario" />
                             <LoginInput name="email" type="text" placeholder="Email" />
                             <LoginInput name="password" type="password" placeholder="Password" />
 

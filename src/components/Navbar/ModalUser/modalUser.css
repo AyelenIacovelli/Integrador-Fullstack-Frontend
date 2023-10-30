@@ -18,6 +18,10 @@
             opacity: 90%;
         }
     }
+
+    & .not-orders-span {
+        cursor: not-allowed;
+    }
 }
 
 @keyframes fadeIn {
@@ -62,10 +66,6 @@
 
 .user-span {
     margin-top: 10px;
-}
-
-.not-orders-span {
-    cursor: not-allowed;
 }
 
 @media only screen and (max-width: 576px) {

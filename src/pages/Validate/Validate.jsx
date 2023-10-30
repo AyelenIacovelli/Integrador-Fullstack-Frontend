@@ -32,7 +32,7 @@ const Validate = () => {
                     (<>
                         <h1>¡Tu cuenta ya fue verificada!</h1>
                         <Button onClick={() => {
-                            navigate('/login')
+                            navigate('/')
                         }}>Volver al Home</Button>
                     </>)
                     :
@@ -53,7 +53,7 @@ const Validate = () => {
                                         // Si el código es válido, actualiza el estado y navega a la página principal
                                         dispatch(setVerified());
                                         toast.success('Cuenta verificada correctamente');
-                                        navigate('/');
+                                        navigate('/login');
                                     } else {
                                         // Si el código no es válido, muestra un mensaje de error
                                         setError('El código ingresado no es válido');

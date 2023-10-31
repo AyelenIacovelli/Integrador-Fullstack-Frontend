@@ -37,8 +37,8 @@ const Validate = () => {
                     </>)
                     :
                     (<div className='validation-container'>
-                        <h1 className='validation-h1'>Revisa tu mail y validá tu cuenta</h1>
-                        <p className='validate-p'>Recuerda que no podrás realizar compras en tanto no esté la cuenta validada</p>
+                        <h1 className='validation-h1'>Revisa tu mail, validá tu cuenta y reiniciá tu sesión</h1>
+                        <p className='validate-p'>Recuerda que no podrás realizar compras en tanto no esté la cuenta correctamente validada</p>
                         <Formik
                             initialValues={{
                                 code: ''
@@ -52,7 +52,7 @@ const Validate = () => {
                                     if (isCodeValid) {
                                         // Si el código es válido, actualiza el estado y navega a la página principal
                                         dispatch(setVerified());
-                                        toast.success('Cuenta verificada correctamente');
+                                        toast.success('Cuenta verificada correctamente. Reinicie su sesión');
                                         navigate('/login');
                                     } else {
                                         // Si el código no es válido, muestra un mensaje de error
